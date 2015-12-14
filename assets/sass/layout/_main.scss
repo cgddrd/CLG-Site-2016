@@ -10,4 +10,52 @@
 		@include vendor('flex-grow', '1');
 		-ms-flex: 1;
 		width: 100%;
+		background: _palette(bg);
+		padding: 0;
+		color: #3c3b3b;
+		font-family: "Raleway", "Source Sans Pro", Helvetica, sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		font-size: 2.5em;
 	}
+
+	span.bold {
+		font-weight: 800 !important;
+	}
+
+	a {
+		cursor: pointer;
+	}
+
+	p {
+		padding: 1em;
+		margin: 0;
+	}
+
+	.map-image {
+		width: 100%;
+		max-width: 100%;
+		max-height: auto;
+		height: auto;
+	}
+
+	.image-container {
+    position: relative;
+    width: 100%;
+		height: 450px;
+		//background-image: url("http://maps.google.com/maps/api/staticmap?center=51.9268173,-4.9151289&zoom=8&size=640x300&scale=2&maptype=roadmap&format=png&style=feature:all|visibility:off&style=element:labels|visibility:off&style=feature:road|visibility:on|color:0xF4D03F&style=feature:road.arterial|color:0xFFFFFF&style=feature:road|element:labels|visibility:off&style=feature:landscape.natural|visibility:on|color:0xEEEEEE&style=feature:landscape.natural.terrain|visibility:on|color:0xD0D0D0&style=feature:landscape.natural.landcover|visibility:on|color:0xD0D0D0&style=feature:landscape.man_made|visibility:on|color:0xD0D0D0&style=feature:water|color:0xf5f5f5|visibility:on&style=element:labels|visibility:off&markers=scale:2|icon:http://i.imgur.com/NqPBMCm.png|SA624JN|visibility:off");
+		background-image: url("http://maps.google.com/maps/api/staticmap?center=52.4998084,-4.4233746&zoom=7&size=640x300&scale=2&maptype=roadmap&format=png&style=feature:all|visibility:off&style=element:labels|visibility:off&style=feature:road|visibility:on|color:0xF4D03F&style=feature:road.arterial|color:0xFFFFFF&style=feature:road|element:labels|visibility:off&style=feature:landscape.natural|visibility:on|color:0xF5F5F5&style=feature:landscape.natural.terrain|visibility:on|color:0xD0D0D0&style=feature:landscape.natural.landcover|visibility:on|color:0xD0D0D0&style=feature:landscape.man_made|visibility:on|color:0xD0D0D0&style=feature:water|color:0xffffff|visibility:on&style=element:labels|visibility:off&markers=scale:2|icon:http://i.imgur.com/NqPBMCm.png|SA624JN&markers=scale:2|icon:http://i.imgur.com/NqPBMCm.png|SY231DL");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+.image-container .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+		height: 100%;
+		display: block;
+    background: rgba(0, 0, 0, .1);
+}
