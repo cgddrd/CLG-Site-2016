@@ -2183,14 +2183,23 @@ p {
   max-height: auto;
   height: auto; }
 
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  letter-spacing: normal; }
+
+p.image-text {
+  position: absolute;
+  z-index: 100;
+  color: #3c3b3b; }
+
 .image-container {
   position: relative;
   width: 100%;
-  height: 450px;
-  background-image: url("http://maps.google.com/maps/api/staticmap?center=52.4998084,-4.4233746&zoom=7&size=640x300&scale=2&maptype=roadmap&format=png&style=feature:all|visibility:off&style=element:labels|visibility:off&style=feature:road|visibility:on|color:0xF4D03F&style=feature:road.arterial|color:0xFFFFFF&style=feature:road|element:labels|visibility:off&style=feature:landscape.natural|visibility:on|color:0xF5F5F5&style=feature:landscape.natural.terrain|visibility:on|color:0xD0D0D0&style=feature:landscape.natural.landcover|visibility:on|color:0xD0D0D0&style=feature:landscape.man_made|visibility:on|color:0xD0D0D0&style=feature:water|color:0xffffff|visibility:on&style=element:labels|visibility:off&markers=scale:2|icon:http://i.imgur.com/NqPBMCm.png|SA624JN&markers=scale:2|icon:http://i.imgur.com/NqPBMCm.png|SY231DL");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; }
+  height: 400px; }
 
 .image-container .after {
   position: absolute;
@@ -2199,7 +2208,7 @@ p {
   width: 100%;
   height: 100%;
   display: block;
-  background: rgba(0, 0, 0, 0.1); }
+  background: rgba(0, 0, 0, 0.2); }
 
 /* Sidebar */
 #sidebar {
