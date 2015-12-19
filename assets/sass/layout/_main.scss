@@ -7,8 +7,8 @@
 /* Main */
 
 	#main {
-		@include vendor('flex-grow', '1');
-		-ms-flex: 1;
+		// @include vendor('flex-grow', '1');
+		// -ms-flex: 1;
 		width: 100%;
 		background: _palette(bg);
 		padding: 0;
@@ -17,7 +17,15 @@
 		font-weight: 400;
 		letter-spacing: 0.15em;
 		text-transform: uppercase;
-		font-size: 2.5em;
+		font-size: 2.2em;
+		//background:	 _palette(bg) url("../me.jpg") top right/40% no-repeat;
+	}
+
+	li {
+		list-style-type: none;
+
+		margin: 0;
+		padding: 0;
 	}
 
 	span.bold {
@@ -41,32 +49,31 @@
 	}
 
 	#map {
-		//width: 100%;
-	//	height: 450px;
 		position: absolute;
     top: 0;
     left: 0;
     width: 100%;
 		height: 100%;
 		letter-spacing: normal;
+		border-top: dotted 1px _palette(fg);
+		border-bottom: dotted 1px _palette(fg);
+		background-color: _palette(bg) !important;
 	}
 
 	p.image-text {
 		position: absolute;
 		z-index: 100;
 		color: #3c3b3b;
+		//font-size: 1.2em;
+
 	}
 
 	.image-container {
     position: relative;
     width: 100%;
 		height: 400px;
-		//background-image: url("http://maps.google.com/maps/api/staticmap?center=51.9268173,-4.9151289&zoom=8&size=640x300&scale=2&maptype=roadmap&format=png&style=feature:all|visibility:off&style=element:labels|visibility:off&style=feature:road|visibility:on|color:0xF4D03F&style=feature:road.arterial|color:0xFFFFFF&style=feature:road|element:labels|visibility:off&style=feature:landscape.natural|visibility:on|color:0xEEEEEE&style=feature:landscape.natural.terrain|visibility:on|color:0xD0D0D0&style=feature:landscape.natural.landcover|visibility:on|color:0xD0D0D0&style=feature:landscape.man_made|visibility:on|color:0xD0D0D0&style=feature:water|color:0xf5f5f5|visibility:on&style=element:labels|visibility:off&markers=scale:2|icon:http://i.imgur.com/NqPBMCm.png|SA624JN|visibility:off");
-		// background-image: url("http://maps.google.com/maps/api/staticmap?center=52.4998084,-4.4233746&zoom=7&size=640x300&scale=2&maptype=roadmap&format=png&style=feature:all|visibility:off&style=element:labels|visibility:off&style=feature:road|visibility:on|color:0xF4D03F&style=feature:road.arterial|color:0xFFFFFF&style=feature:road|element:labels|visibility:off&style=feature:landscape.natural|visibility:on|color:0xF5F5F5&style=feature:landscape.natural.terrain|visibility:on|color:0xD0D0D0&style=feature:landscape.natural.landcover|visibility:on|color:0xD0D0D0&style=feature:landscape.man_made|visibility:on|color:0xD0D0D0&style=feature:water|color:0xffffff|visibility:on&style=element:labels|visibility:off&markers=scale:2|icon:http://i.imgur.com/NqPBMCm.png|SA624JN&markers=scale:2|icon:http://i.imgur.com/NqPBMCm.png|SY231DL");
-		// background-size: cover;
-		// background-repeat: no-repeat;
-		// background-position: center;
 	}
+
 .image-container .after {
     position: absolute;
     top: 0;
@@ -74,5 +81,82 @@
     width: 100%;
 		height: 100%;
 		display: block;
-    background: rgba(0, 0, 0, .2);
+    background: rgba(240, 240, 240, 0.1);
+}
+
+#start {
+
+	//@include vendor('display', 'flex');
+	//@include vendor('flex-direction', 'row-reverse');
+//	height: 400px;
+
+	#section1 {
+	//	width:	60%;
+	//height: 100%;
+
+	}
+
+	#section2 {
+	//	width: 40%;
+		max-height: 400px;
+		height: 400px;
+		background:	 _palette(bg) url("../me.jpg") center/cover no-repeat;
+	}
+
+}
+
+.project-row {
+	border-bottom: dotted 1px _palette(fg);
+}
+
+.project-tile {
+	height: 300px;
+	max-height: 300px;
+//	padding: 0;
+	position: relative;
+
+	> div {
+		height: 100%;
+		background:	url("../me.jpg") rgba(240, 240, 240, 1) center/cover no-repeat;
+
+	}
+
+}
+
+// .project-tile:after {
+//   content: " ";
+//   z-index: 10;
+//   display: block;
+//   position: absolute;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   background: rgba(0, 0, 0, 0.5);
+// }
+
+.project-tile:first-child {
+//	padding: 0 0 0 1em;
+}
+
+.project-tile:first-child:after{
+//	left: 1em;
+}
+
+
+.form-container {
+
+	border-top: dotted 1px _palette(fg);
+	padding: 0 1em 1em 1em;
+
+	p {
+		padding: 1em 0;
+		//border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
+	}
+
+	form {
+		font-size: .5em;
+		letter-spacing: normal;
+	}
+
 }

@@ -117,10 +117,10 @@
 
 			var mapPointer = {
     path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',
-    fillColor: 'black',
-    fillOpacity: 0.8,
+    fillColor: 'grey',
+    fillOpacity: 0.6,
     scale: 0.6,
-    strokeColor: 'black',
+    strokeColor: 'grey',
     strokeWeight: 1
   };
 
@@ -166,12 +166,12 @@
 			</nav>
 			<nav class="main">
 				<ul>
-					<li class="search">
+					<!-- <li class="search">
 						<a class="fa-search" href="#search">Search</a>
 						<form id="search" method="get" action="#">
 							<input type="text" name="query" placeholder="Search" />
 						</form>
-					</li>
+					</li> -->
 					<li class="menu">
 						<a class="fa-bars" href="#menu">Menu</a>
 					</li>
@@ -183,11 +183,11 @@
 		<section id="menu">
 
 			<!-- Search -->
-			<section>
+			<!-- <section>
 				<form class="search" method="get" action="#">
 					<input type="text" name="query" placeholder="Search" />
 				</form>
-			</section>
+			</section> -->
 
 			<!-- Links -->
 			<section>
@@ -233,78 +233,88 @@
 
 			<section id="primary">
 
-				<p>
-					<span class="bold">Connor Goddard</span> is a software developer currently in his final year of study for a degree in MEng Software Engineering degree at <a href="http://aber.ac.uk/">Aberystwyth University</a>, Wales.</p>
+				<div id="start" class="row">
+					<div id="section1" class="8u 12u$(small)">
+						<p>
+							<span class="bold">Connor Goddard</span> is a final-year MEng Software Engineering student at <a>Aberystwyth University</a>, Wales.
+						</p>
+					</div>
+					<div class="4u$ 12u$(small)">
+						<div id="section2" ></div>
+					</div>
 
-
-				</p>
-
-
+				</div>
 
 				<div class="image-container">
-
-
 					<div id="map"></div>
-					<!-- <div class="after"></div> -->
-					<p class="image-text">Raised in <a>Pembrokeshire, UK</a>, he now lives in Aberystwyth where he works as a departmental advisor and demonstrator.</p>
-
-					<!-- <div style="position:absolute;bottom:1em;right:1em;font-size:.2em;">Google</div> -->
+					<div class="after"></div>
+					<p class="image-text">
+						<!-- Raised in Pembrokeshire, UK, he currently lives, studies and works in Aberystwyth.<br /><br /> -->
+						Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>@AberCompSci</a>, whilst also serving as Treasurer on the committee for <a>@AberLINKSStJohn</a>.</p>
 				</div>
+
+				<!-- <p>
+					Past projects have seen Connor <span>develop the first publically-released mobile application whilst on placement with international engineering company <a>Renishaw</a>; design &amp; implement websites for <a>commercial</a> and <a href="http://aber-links.co.uk">voluntary</a> organisations; and <a>capture images from the edge of space using a balloon</a>.
+				</p> -->
+
+				<p>Selected Projects</p>
+
+				<div id="project-row" class="row">
+
+
+
+						<div class="4u 12u$(small) project-tile">
+							<div class="">
+								<p>Goprobe</p>
+							</div>
+						</div>
+
+						<div class="4u 12u$(small) project-tile">
+							<div class="">
+								<p>Website</p>
+							</div>
+						</div>
+
+						<div class="4u 12u$(small) project-tile">
+							<div class="">
+								<p>Space</p>
+							</div>
+						</div>
+
+				</div>
+
+				<div class="form-container">
+
+					<p>Get in Touch</p>
+
+					<form method="post" action="http://formspree.io/connorlukegoddard@gmail.com">
+						<div class="row uniform">
+							<div class="6u 12u$(small)">
+								<input type="text" name="name" id="form-textbox-name" value="" placeholder="Your Name" />
+							</div>
+							<div class="6u$ 12u$(small)">
+								<input type="email" name="_replyto" id="form-textbox-name" value="" placeholder="Your Email" />
+							</div>
+							<div class="12u$">
+								<textarea name="message" id="form-textbox-message" placeholder="Enter your message" rows="6"></textarea>
+							</div>
+							<input type="text" name="_gotcha" style="display:none" />
+							<div class="12u$">
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+									<!-- <li><input type="reset" value="Reset" /></li> -->
+								</ul>
+							</div>
+						</div>
+					</form>
+
+				</div>
+
+
 
 			</section>
 
-			<!-- Post -->
-			<!-- <article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="#">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button big">Continue Reading</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
-
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="#">Ultricies sed magna euismod enim vitae gravida</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-10-25">October 25, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button big">Continue Reading</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
-
-							<article class="post">
+							<!-- <article class="post">
 								<header>
 									<div class="title">
 										<h2><a href="#">Euismod et accumsan</a></h2>
