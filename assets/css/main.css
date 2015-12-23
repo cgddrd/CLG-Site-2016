@@ -884,7 +884,7 @@ body {
     min-width: 320px; } }
 
 body {
-  background: #f4f4f4; }
+  background: #F6F6F6; }
   body.is-loading *, body.is-loading *:before, body.is-loading *:after {
     -moz-animation: none !important;
     -webkit-animation: none !important;
@@ -950,7 +950,7 @@ p {
 h1, h2, h3, h4, h5, h6 {
   color: #3c3b3b;
   font-family: "Raleway", Helvetica, sans-serif;
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: 0.25em;
   line-height: 1.65;
   margin: 0 0 1em 0;
@@ -1112,7 +1112,7 @@ button,
   display: inline-block;
   font-family: "Raleway", Helvetica, sans-serif;
   font-size: 0.6em;
-  font-weight: 800;
+  font-weight: 400;
   height: 4.8125em;
   letter-spacing: 0.25em;
   line-height: 4.8125em;
@@ -1759,7 +1759,7 @@ dl {
         display: block;
         font-family: "Raleway", Helvetica, sans-serif;
         font-size: 0.7em;
-        font-weight: 800;
+        font-weight: 400;
         letter-spacing: 0.25em;
         margin-top: 0.5em;
         text-transform: uppercase;
@@ -1976,7 +1976,7 @@ table {
 
 /* Header */
 body {
-  padding-top: 4.5em; }
+  padding-top: 4.5%; }
 
 #header {
   display: -moz-flex;
@@ -2204,12 +2204,19 @@ p.image-text {
   width: 100%;
   height: 100%;
   display: block;
-  background: rgba(240, 240, 240, 0.1); }
+  background: rgba(240, 240, 240, 0.2); }
 
-#start #section2 {
-  max-height: 400px;
-  height: 400px;
-  background: #ffffff url("../me.jpg") center/cover no-repeat; }
+#start {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex; }
+  #start #section1 {
+    width: 66.666666%;
+    padding-left: 0 !important; }
+  #start #section2 {
+    width: 33.333333%;
+    background: #ffffff url("../me.jpg") center/cover no-repeat; }
 
 .project-row {
   border-bottom: dotted 1px #646464; }
@@ -2217,10 +2224,59 @@ p.image-text {
 .project-tile {
   height: 300px;
   max-height: 300px;
+  padding: 0;
   position: relative; }
   .project-tile > div {
     height: 100%;
     background: url("../me.jpg") #f0f0f0 center/cover no-repeat; }
+
+.project-tile:after {
+  content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); }
+
+.project-tile:first-child {
+  padding: 0 0 0 1em; }
+
+.project-tile:first-child:after {
+  left: 1em; }
+
+.row {
+  margin-left: 0 !important; }
+
+.tile h3 {
+  font-size: .4em;
+  padding: 2em 1em 0em 2em;
+  font-weight: 600; }
+
+.tile li {
+  padding: .5em 0 .5em 1.5em;
+  width: 100%;
+  font-size: .5em;
+  letter-spacing: 0.15em; }
+
+.tile li > p {
+  padding: 0; }
+
+div.tile-row h3 {
+  font-size: .4em;
+  padding: 2em 1em 0em 0;
+  font-weight: 600; }
+
+div.tile-row li {
+  padding: .5em 0 .5em 0em;
+  width: 100%;
+  font-size: .5em;
+  letter-spacing: 0.15em; }
+
+div.tile-row li > p {
+  padding: 0; }
 
 .form-container {
   border-top: dotted 1px #646464;
@@ -2230,6 +2286,102 @@ p.image-text {
   .form-container form {
     font-size: .5em;
     letter-spacing: normal; }
+
+.grid {
+  width: 100%; }
+
+.gutter-sizer {
+  width: 1%; }
+
+.grid-sizer,
+.grid-item {
+  width: 32%; }
+
+.grid-item {
+  background: #fbfbfb;
+  float: left;
+  font-size: .3em;
+  letter-spacing: 0.15em;
+  position: relative;
+  height: 200px;
+  margin-bottom: 1%; }
+  .grid-item span.title {
+    position: absolute;
+    bottom: 1em;
+    right: 2em; }
+
+.grid-item {
+  -moz-transition: all 0.2s ease, border-bottom-color 0.2s ease;
+  -webkit-transition: all 0.2s ease, border-bottom-color 0.2s ease;
+  -ms-transition: all 0.2s ease, border-bottom-color 0.2s ease;
+  transition: all 0.2s ease, border-bottom-color 0.2s ease; }
+  .grid-item:hover:after {
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    background: rgba(251, 251, 251, 0); }
+  .grid-item:after {
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    content: " ";
+    z-index: 10;
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(251, 251, 251, 0.5); }
+
+.ren {
+  background: #fbfbfb url("../renishaw_logo.png") center/80% no-repeat; }
+
+.width2 {
+  width: 65%; }
+
+.width-full {
+  width: 98%; }
+
+#logo {
+  width: 33.333333%;
+  height: 150px;
+  margin: 0 0 1em 0;
+  overflow: hidden; }
+  #logo .logo-cont {
+    min-width: 40%;
+    height: 100%;
+    padding: 1em;
+    background: #ffffff url("../logo.png") center/60% no-repeat;
+    float: left; }
+  #logo .nav-cont {
+    min-width: 57%;
+    float: right;
+    height: 100%;
+    padding: 1em .5em;
+    background: #ffffff;
+    margin-left: 0.5em; }
+    #logo .nav-cont a {
+      font-family: "Raleway", Helvetica, sans-serif;
+      font-size: 0.7em;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-align: center; }
+
+header {
+  display: none !important; }
+
+@media screen and (max-width: 768px) {
+  .grid-sizer, .grid-item {
+    width: 100% !important; }
+  div.tile-row > * {
+    padding: 0 1em !important; }
+  #main {
+    letter-spacing: 0.15em;
+    font-size: 1.2em; } }
 
 /* Sidebar */
 #sidebar {
@@ -2261,7 +2413,7 @@ p.image-text {
   position: relative;
   width: 4em; }
   #intro .logo:before {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' preserveAspectRatio='none' zoomAndPan='disable'%3E%3Cpolygon points='0,0 100,0 100,25 50,0 0,25' style='fill:%23f4f4f4' /%3E%3Cpolygon points='0,100 100,100 100,75 50,100 0,75'  style='fill:%23f4f4f4' /%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' preserveAspectRatio='none' zoomAndPan='disable'%3E%3Cpolygon points='0,0 100,0 100,25 50,0 0,25' style='fill:%23F6F6F6' /%3E%3Cpolygon points='0,100 100,100 100,75 50,100 0,75'  style='fill:%23F6F6F6' /%3E%3C/svg%3E");
     background-position: top left;
     background-repeat: no-repeat;
     background-size: 100% 100%;

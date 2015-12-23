@@ -12,8 +12,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
 
 
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -73,7 +75,7 @@
 					featureType: 'landscape.natural',
 					stylers: [
 						{visibility: 'on'},
-						{color: '#F5F5F5'}
+						{color: '#F6F6F6'}
 					]
 				},
 				{
@@ -229,20 +231,49 @@
 		</section>
 
 		<!-- Main -->
+
+		<div id="logo">
+
+			<div class="logo-cont">
+			</div>
+
+			<div class="nav-cont">
+				<nav class="links">
+					<ul>
+						<!-- <li><a href="#">Information</a></li> -->
+						<li><a href="#">Work</a></li>
+						<li><a href="#">Photography</a></li>
+						<li><a href="#">Curriculum Vitae</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
 		<div id="main">
 
 			<section id="primary">
 
-				<div id="start" class="row">
-					<div id="section1" class="8u 12u$(small)">
+				<!-- <div id="start" class="row">
+					<div id="section1" class="9u 12u$(small)">
 						<p>
 							<span class="bold">Connor Goddard</span> is a final-year MEng Software Engineering student at <a>Aberystwyth University</a>, Wales.
 						</p>
 					</div>
-					<div class="4u$ 12u$(small)">
-						<div id="section2" ></div>
+					<div id="section2" class="3u$ 12u$(small)">
+						<div class="gsa">
+						</div>
 					</div>
+				</div> -->
 
+				<div id="start" class="row2">
+					<div id="section1">
+						<p>
+							<span class="bold">Connor Goddard</span> is in his final-year of study for a degree in MEng Software Engineering at <a>Aberystwyth University</a>, Wales.
+						</p>
+					</div>
+					<div id="section2">
+					</div>
 				</div>
 
 				<div class="image-container">
@@ -250,18 +281,16 @@
 					<div class="after"></div>
 					<p class="image-text">
 						<!-- Raised in Pembrokeshire, UK, he currently lives, studies and works in Aberystwyth.<br /><br /> -->
-						Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>@AberCompSci</a>, whilst also serving as Treasurer on the committee for <a>@AberLINKSStJohn</a>.</p>
+						Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
 				</div>
 
 				<!-- <p>
 					Past projects have seen Connor <span>develop the first publically-released mobile application whilst on placement with international engineering company <a>Renishaw</a>; design &amp; implement websites for <a>commercial</a> and <a href="http://aber-links.co.uk">voluntary</a> organisations; and <a>capture images from the edge of space using a balloon</a>.
 				</p> -->
 
-				<p>Selected Projects</p>
+				<!-- <p>Selected Projects</p> -->
 
-				<div id="project-row" class="row">
-
-
+				<!-- <div id="project-row" class="row">
 
 						<div class="4u 12u$(small) project-tile">
 							<div class="">
@@ -281,7 +310,80 @@
 							</div>
 						</div>
 
+				</div> -->
+
+				<div class="row tile-row">
+
+					<div class="8u 12u$(small)">
+
+						<h3>Recent Work -</h3>
+
+						<div class="grid">
+							<div class="grid-sizer"></div>
+							<div class="gutter-sizer"></div>
+
+						  <div class="grid-item width2 ren"><span class="title">GoProbe // <span class="bold">Renishaw</span></span></div>
+						  <div class="grid-item"></div>
+							<div class="grid-item"></div>
+						  <div class="grid-item width2"></div>
+							<div class="grid-item width-full"></div>
+							<div class="grid-item"></div>
+
+						</div>
+
+					</div>
+
+					<div class="4u 12u$(small)">
+
+						<h3>Recent Press -</h3>
+
+						<li>
+							<p><a>GoProbe</a> // Mobile App</p>
+							<p><span class="bold">Renishaw</span></p>
+						</li>
+						<li>
+							<p><a>AberLINKS</a> // Web Design</p>
+							<p><span class="bold">St. John Cymru-Wales</span></p>
+						</li>
+						<br />
+						<h3>Recent Talks -</h3>
+					</div>
+
 				</div>
+
+				<!-- <div class="row tile-row">
+
+					<div class="4u 12u$(small)">
+
+						<div class="tile">
+							<h3>Recent Projects -</h3>
+							<li>
+								<p><a>GoProbe</a> // Mobile App</p>
+								<p><span class="bold">Renishaw</span></p>
+							</li>
+							<li>
+								<p><a>AberLINKS</a> // Web Design</p>
+								<p><span class="bold">St. John Cymru-Wales</span></p>
+							</li>
+						</div>
+
+					</div>
+
+					<div class="4u 12u$(small)">
+						<div class="tile">
+							<h3>Selected Press -</h3>
+						</div>
+
+					</div>
+
+					<div class="4u 12u$(small)">
+						<div class="tile">
+							<h3>Latest Talks -</h3>
+						</div>
+
+					</div>
+
+				</div> -->
 
 				<div class="form-container">
 
@@ -794,6 +896,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<script src="assets/js/util.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
+
+		<script>
+		var elem = document.querySelector('.grid');
+		var msnry = new Masonry( elem, {
+			// options
+			itemSelector: '.grid-item',
+			columnWidth: '.grid-sizer',
+			gutter: '.gutter-sizer',
+  		percentPosition: true
+
+		});
+		</script>
 
 </body>
 
