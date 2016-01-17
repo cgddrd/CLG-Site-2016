@@ -1,0 +1,33 @@
+@-webkit-keyframes moveUp {
+  to {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-moz-keyframes moveUp {
+  to {
+    -moz-transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes moveUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.moveup {
+	-webkit-animation: moveUp .45s cubic-bezier(0.645, .045, .355, 1) forwards;
+	-moz-animation: moveUp .45s cubic-bezier(0.645, .045, .355, 1) forwards;
+	animation: moveUp .45s cubic-bezier(0.645, .045, .355, 1) forwards;
+}
+
+.moveup:nth-child(even) {
+  animation-duration: 0.8s;
+}
+
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+}
