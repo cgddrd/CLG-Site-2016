@@ -12,7 +12,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
@@ -24,11 +25,11 @@
 			var mapCanvas = document.getElementById('map');
 
 			var mapOptions = {
-				center: new google.maps.LatLng(52.2673502,-4.4477719),
+				center: new google.maps.LatLng(52.2673502, -4.4477719),
 				zoom: 8,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 				zoomControl: false,
-    		scaleControl: false,
+				scaleControl: false,
 				mapTypeControl: false,
 				rotateControl: false,
 				streetViewControl: false
@@ -36,105 +37,104 @@
 
 			var map = new google.maps.Map(mapCanvas, mapOptions);
 
-			map.set('styles', [
-				{
-					featureType: 'all',
-					stylers: [{
-						visibility: 'off'
-					}]
-				},
-				{
-					featureType: 'road',
-					stylers: [
-						{visibility: 'on'},
-						{color: '#F4D03F'}
-					]
-				},
-				{
-					featureType: 'road.arterial',
-					stylers: [
-						{visibility: 'on'},
-						{color: '#D0D0D0'}
-					]
-				},
-				{
-					featureType: 'landscape.natural.terrain',
-					stylers: [
-						{visibility: 'on'},
-						{color: '#D0D0D0'}
-					]
-				},
-				{
-					featureType: 'landscape.natural.landcover',
-					stylers: [
-						{visibility: 'on'},
-						{color: '#D0D0D0'}
-					]
-				},
-				{
-					featureType: 'landscape.natural',
-					stylers: [
-						{visibility: 'on'},
-						{color: '#F6F6F6'}
-					]
-				},
-				{
-					featureType: 'water',
-					stylers: [
-						{visibility: 'on'},
-						{color: '#ffffff'}
-					]
-				},
-				{
-         featureType: "administrative",
-         elementType: "labels",
-         stylers: [
-           { visibility: "off" }
-         ]
-       },
-			 {
-         featureType: "poi",
-         elementType: "labels",
-         stylers: [
-           { visibility: "off" }
-         ]
-       },
-			 {
-         featureType: "water",
-         elementType: "labels",
-         stylers: [
-           { visibility: "off" }
-         ]
-       },
-			 {
-         featureType: "road",
-         elementType: "labels",
-         stylers: [
-           { visibility: "off" }
-         ]
-       }
-			]);
+			map.set('styles', [{
+				featureType: 'all',
+				stylers: [{
+					visibility: 'off'
+				}]
+			}, {
+				featureType: 'road',
+				stylers: [{
+					visibility: 'on'
+				}, {
+					color: '#F4D03F'
+				}]
+			}, {
+				featureType: 'road.arterial',
+				stylers: [{
+					visibility: 'on'
+				}, {
+					color: '#D0D0D0'
+				}]
+			}, {
+				featureType: 'landscape.natural.terrain',
+				stylers: [{
+					visibility: 'on'
+				}, {
+					color: '#D0D0D0'
+				}]
+			}, {
+				featureType: 'landscape.natural.landcover',
+				stylers: [{
+					visibility: 'on'
+				}, {
+					color: '#D0D0D0'
+				}]
+			}, {
+				featureType: 'landscape.natural',
+				stylers: [{
+					visibility: 'on'
+				}, {
+					color: '#F6F6F6'
+				}]
+			}, {
+				featureType: 'water',
+				stylers: [{
+					visibility: 'on'
+				}, {
+					color: '#ffffff'
+				}]
+			}, {
+				featureType: "administrative",
+				elementType: "labels",
+				stylers: [{
+					visibility: "off"
+				}]
+			}, {
+				featureType: "poi",
+				elementType: "labels",
+				stylers: [{
+					visibility: "off"
+				}]
+			}, {
+				featureType: "water",
+				elementType: "labels",
+				stylers: [{
+					visibility: "off"
+				}]
+			}, {
+				featureType: "road",
+				elementType: "labels",
+				stylers: [{
+					visibility: "off"
+				}]
+			}]);
 
-			map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
+			map.setOptions({
+				draggable: false,
+				zoomControl: false,
+				scrollwheel: false,
+				disableDoubleClickZoom: true
+			});
 
 			var mapPointer = {
-    path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',
-    fillColor: 'grey',
-    fillOpacity: 0.6,
-    scale: 0.6,
-    strokeColor: 'grey',
-    strokeWeight: 1
-  };
+				path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',
+				fillColor: 'grey',
+				fillOpacity: 0.6,
+				scale: 0.6,
+				strokeColor: 'grey',
+				strokeWeight: 1
+			};
 
 			var marker = new google.maps.Marker({
-				position: new google.maps.LatLng(51.7441133,-4.932024),
+				position: new google.maps.LatLng(51.7441133, -4.932024),
 				map: map,
 				//icon: 'http://i.imgur.com/NqPBMCm.png'
 				icon: mapPointer
 			});
 
 			var marker = new google.maps.Marker({
-				position: new google.maps.LatLng(52.414467,-4.0951933),
+				position: new google.maps.LatLng(52.414467, -4.0951933),
 				map: map,
 				//icon: 'http://i.imgur.com/NqPBMCm.png'
 				icon: mapPointer
@@ -154,26 +154,35 @@
 
 		<!-- Header -->
 		<header id="header">
-			<img src="assets/logo.png" id="logo-img" />
-			<!-- <h1><a href="#">Connor Luke Goddard</a></h1> -->
-			<!-- <h1><img src="assets/logo.png" id="logo-img"/></h1> -->
-			<nav class="links">
-				<ul>
-					<!-- <li><a href="#">Information</a></li> -->
-					<li><a href="#">Work</a></li>
-					<li><a href="#">Photography</a></li>
-					<li><a href="#">Curriculum Vitae</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</nav>
+
+
+
+			<div id="logo">
+
+				<div class="logo-cont">
+				</div>
+
+			</div>
+
+			<div class="nav-cont">
+				<nav class="links">
+					<ul>
+						<li><a id="nav-item-work" href="#">Work</a></li>
+						<li><a href="#">Photography</a></li>
+						<li><a href="#">Curriculum Vitae</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+
 			<nav class="main">
 				<ul>
-					<!-- <li class="search">
+					<li class="search">
 						<a class="fa-search" href="#search">Search</a>
 						<form id="search" method="get" action="#">
 							<input type="text" name="query" placeholder="Search" />
 						</form>
-					</li> -->
+					</li>
 					<li class="menu">
 						<a class="fa-bars" href="#menu">Menu</a>
 					</li>
@@ -232,29 +241,278 @@
 
 		<!-- Main -->
 
-		<div id="logo">
 
-			<div class="logo-cont">
+
+		<div class="grid">
+
+			<div class="grid-sizer"></div>
+			<div class="gutter-sizer"></div>
+
+			<div class="grid-item width2 work moveup already-visible">
+
+				<p class="image-text">
+					<span class="bold">Connor Goddard</span> is a final-year MEng Software Engineering student at <a>Aberystwyth University</a>, Wales.
+				</p>
+
 			</div>
 
-			<div class="nav-cont">
-				<nav class="links">
-					<ul>
-						<!-- <li><a href="#">Information</a></li> -->
-						<li><a href="#">Work</a></li>
-						<li><a href="#">Photography</a></li>
-						<li><a href="#">Curriculum Vitae</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</nav>
+			<div class="grid-item profile-image moveup already-visible">
+				<div class="grid-item-image-container">
+					<span id="profile-image"></span>
+				</div>
+
+				<div class="title">Me // <span class="bold">Renishaw</span></div>
+
 			</div>
+
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+
+			<div class="grid-item width2 heightplushalf work"></div>
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+			<div class="grid-item width-full"></div>
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+			<div class="grid-item work"></div>
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+			<div class="grid-item width2 work">
+
+				<div class="image-container">
+							<div id="map"></div>
+							<div class="after"></div>
+							<p class="image-text">
+								Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
+						</div>
+			</div>
+
+			<div class="grid-item">
+				<div class="grid-item-image-container">
+					<span id="violet"></span>
+				</div>
+
+				<div class="title">GoProbe // <span class="bold">Renishaw</span></div>
+
+			</div>
+
 		</div>
 
-		<div id="main">
+		<!-- <div id="main">
 
-			<section id="primary">
+			<section id="primary"> -->
 
-				<!-- <div id="start" class="row">
+		<!-- <div id="start" class="row">
 					<div id="section1" class="9u 12u$(small)">
 						<p>
 							<span class="bold">Connor Goddard</span> is a final-year MEng Software Engineering student at <a>Aberystwyth University</a>, Wales.
@@ -265,7 +523,7 @@
 						</div>
 					</div>
 				</div> -->
-
+		<!--
 				<div id="start" class="row2">
 					<div id="section1">
 						<p>
@@ -274,23 +532,22 @@
 					</div>
 					<div id="section2">
 					</div>
-				</div>
+				</div> -->
 
-				<div class="image-container">
+		<!-- <div class="image-container">
 					<div id="map"></div>
 					<div class="after"></div>
 					<p class="image-text">
-						<!-- Raised in Pembrokeshire, UK, he currently lives, studies and works in Aberystwyth.<br /><br /> -->
 						Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving on the committee for <a>&commat;AberLINKSStJohn</a>.</p>
-				</div>
+				</div> -->
 
-				<!-- <p>
+		<!-- <p>
 					Past projects have seen Connor <span>develop the first publically-released mobile application whilst on placement with international engineering company <a>Renishaw</a>; design &amp; implement websites for <a>commercial</a> and <a href="http://aber-links.co.uk">voluntary</a> organisations; and <a>capture images from the edge of space using a balloon</a>.
 				</p> -->
 
-				<!-- <p>Selected Projects</p> -->
+		<!-- <p>Selected Projects</p> -->
 
-				<!-- <div id="project-row" class="row">
+		<!-- <div id="project-row" class="row">
 
 						<div class="4u 12u$(small) project-tile">
 							<div class="">
@@ -312,7 +569,7 @@
 
 				</div> -->
 
-				<div class="row tile-row">
+		<!-- <div class="row tile-row">
 
 					<div class="8u 12u$(small)">
 
@@ -349,9 +606,9 @@
 						<h3>Recent Talks -</h3>
 					</div>
 
-				</div>
+				</div> -->
 
-				<!-- <div class="row tile-row">
+		<!-- <div class="row tile-row">
 
 					<div class="4u 12u$(small)">
 
@@ -384,7 +641,7 @@
 					</div>
 
 				</div> -->
-
+		<!--
 				<div class="form-container">
 
 					<p>Get in Touch</p>
@@ -404,19 +661,18 @@
 							<div class="12u$">
 								<ul class="actions">
 									<li><input type="submit" value="Send Message" /></li>
-									<!-- <li><input type="reset" value="Reset" /></li> -->
 								</ul>
 							</div>
 						</div>
 					</form>
 
-				</div>
+				</div> -->
 
 
 
-			</section>
+		<!-- </section> -->
 
-							<!-- <article class="post">
+		<!-- <article class="post">
 								<header>
 									<div class="title">
 										<h2><a href="#">Euismod et accumsan</a></h2>
@@ -847,8 +1103,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 								</ul>
 							</section> -->
 
-			<!-- About -->
-			<!-- <section class="blurb">
+		<!-- About -->
+		<!-- <section class="blurb">
 								<h2>About</h2>
 								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
 								<ul class="actions">
@@ -856,8 +1112,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 								</ul>
 							</section> -->
 
-			</section>
-		</div>
+		<!-- </section>
+		</div> -->
 
 		<section id="footer">
 			<ul class="icons">
@@ -898,15 +1154,89 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<script src="assets/js/main.js"></script>
 
 		<script>
-		var elem = document.querySelector('.grid');
-		var msnry = new Masonry( elem, {
-			// options
-			itemSelector: '.grid-item',
-			columnWidth: '.grid-sizer',
-			gutter: '.gutter-sizer',
-  		percentPosition: true
+			// var elem = document.querySelector('.grid');
+			// var msnry = new Masonry(elem, {
+			// 	// options
+			// 	itemSelector: '.grid-item',
+			// 	columnWidth: '.grid-sizer',
+			// 	gutter: '.gutter-sizer',
+			// 	percentPosition: true
+			//
+			// });
 
+
+		var iso = new Isotope( '.grid', {
+			itemSelector: '.grid-item',
+		  percentPosition: true,
+		  masonry: {
+		    // use element for option
+		    columnWidth: '.grid-sizer',
+				gutter: '.gutter-sizer',
+		  }
 		});
+
+		var element = document.getElementById('nav-item-work');
+		element.addEventListener('click', function() { iso.arrange({ filter: '.work' }) }, false);
+
+
+
+
+		</script>
+
+		<script>
+
+		(function($) {
+
+  /**
+   * Copyright 2012, Digital Fusion
+   * Licensed under the MIT license.
+   * http://teamdf.com/jquery-plugins/license/
+   *
+   * @author Sam Sehnert
+   * @desc A small plugin that checks whether elements are within
+   *     the user visible viewport of a web browser.
+   *     only accounts for vertical position, not horizontal.
+   */
+
+  $.fn.visible = function(partial) {
+
+    var $t = $(this),
+      $w = $(window),
+      viewTop = $w.scrollTop(),
+      viewBottom = viewTop + $w.height(),
+      _top = $t.offset().top,
+      _bottom = _top + $t.height(),
+      compareTop = partial === true ? _bottom : _top,
+      compareBottom = partial === true ? _top : _bottom;
+
+    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+  };
+
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".grid-item");
+
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible");
+  }
+});
+
+win.scroll(function(event) {
+
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("moveup");
+    }
+  });
+
+});
+
 		</script>
 
 </body>
