@@ -2005,29 +2005,56 @@ table {
   position: relative; }
   .grid .gutter-sizer {
     width: 1%; }
-  .grid .grid-sizer,
+  .grid .grid-sizer {
+    width: 1%; }
   .grid .grid-item {
-    width: 32%; }
-  .grid .col-2 {
-    width: 16% !important; }
-  .grid .col-3 {
-    width: 24% !important; }
-  .grid .col-4 {
-    width: 32% !important; }
-  .grid .col-5 {
-    width: 39% !important; }
-  .grid .col-6 {
-    width: 49% !important; }
-  .grid .col-7 {
-    width: 59% !important; }
-  .grid .col-8 {
-    width: 65% !important; }
-  .grid .col-9 {
-    width: 74% !important; }
-  .grid .col-10 {
-    width: 82% !important; }
-  .grid .col-12 {
-    width: 100% !important; }
+    width: 30%; }
+  .grid *[class^='col-12'],
+  .grid *[class*=' col-12'] {
+    width: 100%; }
+  .grid .col-11-l {
+    width: 90.66666667%; }
+  .grid .col-11-r {
+    width: 91.33333333%; }
+  .grid .col-10-l {
+    width: 82.66666667%; }
+  .grid .col-10-r {
+    width: 83.33333333%; }
+  .grid .col-9-l {
+    width: 72.66666667%; }
+  .grid .col-9-r {
+    width: 73.66666667%; }
+  .grid .col-8-l {
+    width: 64.66666667%; }
+  .grid .col-8-r {
+    width: 65.33333333%; }
+  .grid .col-7-l {
+    width: 58.33333333%; }
+  .grid .col-7-r {
+    width: 59.33333333%; }
+  .grid *[class^='col-6'],
+  .grid *[class*=' col-6'] {
+    width: 49.49999999%; }
+  .grid .col-5-l {
+    width: 38.66666667%; }
+  .grid .col-5-r {
+    width: 39.66666667%; }
+  .grid .col-4-l {
+    width: 32.66666667%; }
+  .grid .col-4-r {
+    width: 33.33333333%; }
+  .grid .col-3-l {
+    width: 24.33333333%; }
+  .grid .col-3-r {
+    width: 25.33333333%; }
+  .grid .col-2-l {
+    width: 14.66666667%; }
+  .grid .col-2-r {
+    width: 15.33333333%; }
+  .grid .col-1-l {
+    width: 6.66666667%; }
+  .grid .col-1-r {
+    width: 7.33333333%; }
   .grid .grid-item {
     background: #FbFbFb;
     font-size: 1em;
@@ -2120,7 +2147,7 @@ body {
   left: 0;
   line-height: 6em;
   top: 0;
-  width: 98%;
+  width: 100%;
   z-index: 10000;
   overflow: hidden !important;
   margin-bottom: 1em;

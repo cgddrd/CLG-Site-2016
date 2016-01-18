@@ -246,7 +246,7 @@
 			<div class="grid-sizer"></div>
 			<div class="gutter-sizer"></div>
 
-			<div class="grid-item col-7 work moveup already-visible">
+			<div class="grid-item col-5-l work moveup already-visible">
 
 				<p class="image-text">
 					<span class="bold">Connor Goddard</span> is a final-year MEng Software Engineering student at <a>Aberystwyth University</a>, Wales.
@@ -254,14 +254,14 @@
 
 			</div>
 
-			<div class="grid-item col-3 profile-image moveup already-visible">
+			<div class="grid-item col-7-r profile-image moveup already-visible">
 				<div class="grid-item-image-container">
 					<span id="profile-image"></span>
 				</div>
 
 			</div>
 
-			<div class="grid-item">
+			<div class="grid-item col-11-l">
 
 				<div class="grid-item-image-container">
 					<span id="violet"></span>
@@ -271,7 +271,7 @@
 
 			</div>
 
-			<div class="grid-item width2 work">
+			<div class="grid-item col-1-r work">
 
 				<div class="image-container">
 							<div id="map"></div>
@@ -281,11 +281,15 @@
 						</div>
 			</div>
 
+			<div class="grid-item col-10-l work"></div>
 
+			<div class="grid-item col-2-r"></div>
 
-			<div class="grid-item width2 heightplushalf work"></div>
+			<div class="grid-item col-3-l heightplushalf work"></div>
 
-			<div class="grid-item width-full"></div>
+			<div class="grid-item col-9-r"></div>
+
+			<div class="grid-item col-12"></div>
 
 		</div>
 
@@ -328,17 +332,6 @@
 		<script src="assets/js/main.js"></script>
 
 		<script>
-			// var elem = document.querySelector('.grid');
-			// var msnry = new Masonry(elem, {
-			// 	// options
-			// 	itemSelector: '.grid-item',
-			// 	columnWidth: '.grid-sizer',
-			// 	gutter: '.gutter-sizer',
-			// 	percentPosition: true
-			//
-			// });
-
-
 		var iso = new Isotope( '.grid', {
 			itemSelector: '.grid-item',
 		  percentPosition: true,
@@ -346,6 +339,7 @@
 		    // use element for option
 		    columnWidth: '.grid-sizer',
 				gutter: '.gutter-sizer',
+				percentPosition: true
 		  }
 		});
 
