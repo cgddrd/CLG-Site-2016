@@ -12,6 +12,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<!-- <link rel="stylesheet" href="assets/css/devices.min.css" type="text/css" /> -->
+	<link rel="stylesheet" href="assets/css/unslider.css">
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -246,7 +248,7 @@
 			<div class="grid-sizer"></div>
 			<div class="gutter-sizer"></div>
 
-			<div class="grid-item col-5-l work moveup already-visible">
+			<div class="grid-item col-7-l work moveup already-visible">
 
 				<p class="image-text">
 					<span class="bold">Connor Goddard</span> is a final-year MEng Software Engineering student at <a>Aberystwyth University</a>, Wales.
@@ -254,14 +256,14 @@
 
 			</div>
 
-			<div class="grid-item col-7-r profile-image moveup already-visible">
+			<div class="grid-item col-5-r profile-image moveup already-visible">
 				<div class="grid-item-image-container">
 					<span id="profile-image"></span>
 				</div>
 
 			</div>
 
-			<div class="grid-item col-11-l">
+			<div class="grid-item col-3-l">
 
 				<div class="grid-item-image-container">
 					<span id="violet"></span>
@@ -271,7 +273,7 @@
 
 			</div>
 
-			<div class="grid-item col-1-r work">
+			<div class="grid-item work col-9-r">
 
 				<div class="image-container">
 							<div id="map"></div>
@@ -281,15 +283,37 @@
 						</div>
 			</div>
 
-			<div class="grid-item col-10-l work"></div>
+			<div class="grid-item col-7-l work">
 
-			<div class="grid-item col-2-r"></div>
+				<div class="grid-item-image-container">
+					<span id="space"></span>
+				</div>
 
-			<div class="grid-item col-3-l heightplushalf work"></div>
+				<div class="title">Race to Space // <span class="bold">Project</span></div>
 
-			<div class="grid-item col-9-r"></div>
+			</div>
 
-			<div class="grid-item col-12"></div>
+			<div class="grid-item col-5-r"></div>
+
+
+			<div class="grid-item heightplushalf col-4-l">
+
+				<div id="mob">
+					<div class="screen-slider">
+						<ul>
+							<li id="slide1"></li>
+							<li id="slide2"></li>
+							<li id="slide3"></li>
+							<li id="slide4"></li>
+							<li id="slide5"></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="title">GoProbe - Renishaw // <span class="bold">Android &amp; iOS</span></div>
+
+			</div>
+
 
 		</div>
 
@@ -328,6 +352,8 @@
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
+		<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+		<script src="assets/js/unslider-min.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
 
@@ -346,7 +372,15 @@
 		var element = document.getElementById('nav-item-work');
 		element.addEventListener('click', function() { iso.arrange({ filter: '.work' }) }, false);
 
-
+		jQuery(document).ready(function($) {
+			$('.screen-slider').unslider({
+				autoplay: true,
+				arrows: false,
+				nav: false,
+				speed: 600,
+				delay: 5000
+			});
+		});
 
 
 		</script>
