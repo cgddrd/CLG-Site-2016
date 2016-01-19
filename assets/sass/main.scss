@@ -2,14 +2,10 @@
 @import 'libs/functions';
 @import 'libs/mixins';
 @import 'libs/skel';
+@import 'libs/animation';
+
 @import 'font-awesome.min.css';
 @import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,400,700|Raleway:100,400,800,900');
-
-/*
-	Future Imperfect by Pixelarity
-	pixelarity.com @pixelarity
-	License: pixelarity.com/license
-*/
 
 	@include skel-breakpoints((
 		xlarge: '(max-width: 1680px)',
@@ -44,6 +40,7 @@
 	@import 'components/post';
 	@import 'components/section';
 	@import 'components/table';
+	@import 'components/grid';
 
 // Layout.
 
