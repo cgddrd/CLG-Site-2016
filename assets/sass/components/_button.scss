@@ -10,6 +10,7 @@
 	input[type="reset"],
 	input[type="button"],
 	button,
+
 	.button {
 		@include vendor('appearance', 'none');
 		@include vendor('transition', (
@@ -17,14 +18,15 @@
 			'box-shadow #{_duration(transition)} ease',
 			'color #{_duration(transition)} ease'
 		));
+
 		background-color: transparent;
 		border: 0;
 		box-shadow: inset 0 0 0 1px _palette(border);
 		color: _palette(fg-bold) !important;
 		cursor: pointer;
 		display: inline-block;
-		font-family: _font(family-heading);
-		font-size: 0.6em;
+		font-family: _font(family-grid);
+		font-size: 0.8em;
 		font-weight: _font(weight-heading-bold);
 		height: _size(element-height) * 1.75;
 		letter-spacing: _font(kerning-heading);
@@ -36,11 +38,12 @@
 		white-space: nowrap;
 
 		&:hover {
-			box-shadow: inset 0 0 0 1px _palette(accent);
-			color: _palette(accent) !important;
+			box-shadow: inset 0 0 0 1px _palette(fg-bold);
+			//color: _palette(accent) !important;
+			color: _palette(accent-alt) !important;
 
 			&:active {
-				background-color: transparentize(_palette(accent), 0.95);
+				background-color: transparentize(_palette(accent-alt), 0.95);
 			}
 		}
 
@@ -83,4 +86,10 @@
 				color: _palette(border) !important;
 			}
 		}
+
+		i.fa {
+			float: none !important;
+			vertical-align: middle;
+		}
+
 	}

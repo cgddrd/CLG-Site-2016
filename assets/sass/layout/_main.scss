@@ -22,16 +22,21 @@ span.bold {
 a {
   cursor: pointer;
 }
-p {
-  padding: 1em;
-  margin: 0;
+
+.fa {
+
+  text-decoration: none !important;
+  border: none !important;
+
 }
+
 .map-image {
   width: 100%;
   max-width: 100%;
   max-height: auto;
   height: auto;
 }
+
 #map {
   position: absolute;
   top: 0;
@@ -40,16 +45,10 @@ p {
   height: 100%;
   letter-spacing: normal;
 }
-p.image-text {
-  position: absolute;
-  z-index: 100;
-  color: #3c3b3b;
-  //font-size: 1.2em;
-}
+
 .image-container {
   position: relative;
   width: 100%;
-  //height: 400px;
   height: 100%;
 }
 .image-container .after {
@@ -71,7 +70,6 @@ p.image-text {
     //border-right: 2px solid _palette(accent);
   }
   #section2 {
-    //max-height: 400px;
     width: 33.333333%;
     background: _palette(bg) url(../me.jpg) center/cover no-repeat;
   }
@@ -97,6 +95,48 @@ p.image-text {
   background: url(../space.jpg) center/cover no-repeat !important;
 }
 
+#mmp {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../mmp.jpg) center/cover no-repeat !important;
+}
+
+#aber-links {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../aber-links-logo.png) center/75% no-repeat !important;
+}
+
+#apples-and-pairs {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../apples-and-pairs-logo.png) center/75% no-repeat !important;
+}
+
+#orbitaljs {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../orbitaljs.png) center/cover no-repeat !important;
+}
+
+#wordwarz {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../wordwarz.png) center/cover no-repeat !important;
+}
+
+#tyfi {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../tyfi_logo_full.png) center/55% no-repeat !important;
+}
+
 #mob {
   display: block;
   position: relative;
@@ -108,18 +148,14 @@ p.image-text {
 .screen-slider {
 
   position: absolute;
-  // height: 400px;
-  // width: 226px;
-  // top: 84px;
-  // left: 67.5px
-  // height: 72.5%;
+  // height: 67.1%;
   // width: 62.5%;
-  // top: 11.5%;
+  // top: 16.5%;
   // left: 18.8%;
-  height: 67.1%;
+
+  height: 78.1%;
   width: 62.5%;
-//  top: 15.5%;
-  top: 16.5%;
+  top: 12.5%;
   left: 18.8%;
 
 }
@@ -136,31 +172,31 @@ p.image-text {
 #slide1 {
   width: 100%;
   height: 100%;
-  background: url(../unnamed.png) center/100% no-repeat !important;
+  background: url(../unnamed.png) center/98% no-repeat !important;
 }
 
 #slide2 {
   width: 100%;
   height: 100%;
-  background: url(../unnamed2.png) center/100% no-repeat !important;
+  background: url(../unnamed2.png) center/98% no-repeat !important;
 }
 
 #slide3 {
   width: 100%;
   height: 100%;
-  background: url(../unnamed3.png) center/100% no-repeat !important;
+  background: url(../unnamed3.png) center/98% no-repeat !important;
 }
 
 #slide4 {
   width: 100%;
   height: 100%;
-  background: url(../unnamed4.png) center/100% no-repeat !important;
+  background: url(../unnamed4.png) center/98% no-repeat !important;
 }
 
 #slide5 {
   width: 100%;
   height: 100%;
-  background: url(../unnamed5.png) center/100% no-repeat !important;
+  background: url(../unnamed5.png) center/98% no-repeat !important;
 }
 
 .nav-cont {
@@ -220,20 +256,4 @@ p.image-text {
 .mob-container {
   @include aspect-ratio(16,9);
   width: 75% !important;
-}
-
-.marvel-device.nexus5 {
-
-  width: 75% !important;
-  @include aspect-ratio(16,9);
-
-  // &:after {
-  //
-  //   padding-top: 56.25% !important;
-  //   /* 16:9 ratio */
-  //   display: block;
-  //   content: '';
-  //
-  // }
-
 }

@@ -1,5 +1,5 @@
 @import url(font-awesome.min.css);
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,400,700|Raleway:100,400,800,900");
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,400,700|Raleway:100,400,800,900|Montserrat:400,700");
 @-webkit-keyframes moveUp {
   to {
     -webkit-transform: translateY(0);
@@ -898,7 +898,15 @@ body {
   width: device-width; }
 
 body {
-  -ms-overflow-style: scrollbar; }
+  -ms-overflow-style: scrollbar;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-font-feature-settings: "lnum";
+  -moz-font-feature-settings: "lnum";
+  -ms-font-feature-settings: "lnum";
+  -o-font-feature-settings: "lnum";
+  font-feature-settings: "lnum"; }
 
 @media screen and (max-width: 480px) {
   html, body {
@@ -972,7 +980,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #3c3b3b;
   font-family: "Raleway", Helvetica, sans-serif;
   font-weight: 400;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.15em;
   line-height: 1.65;
   margin: 0 0 1em 0;
   text-transform: uppercase; }
@@ -981,7 +989,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 0; }
 
 h2 {
-  font-size: 1.1em; }
+  font-size: 1em; }
 
 h3 {
   font-size: 0.9em; }
@@ -1068,7 +1076,7 @@ hr {
   font-family: "Raleway", Helvetica, sans-serif;
   font-size: 0.6em;
   font-weight: 400;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   white-space: nowrap; }
   .author .name {
@@ -1131,11 +1139,11 @@ button,
   color: #3c3b3b !important;
   cursor: pointer;
   display: inline-block;
-  font-family: "Raleway", Helvetica, sans-serif;
-  font-size: 0.6em;
-  font-weight: 400;
+  font-family: "Montserrat", "Raleway", Helvetica, sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
   height: 4.8125em;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.15em;
   line-height: 4.8125em;
   padding: 0 2.5em;
   text-align: center;
@@ -1147,14 +1155,14 @@ button,
   input[type="button"]:hover,
   button:hover,
   .button:hover {
-    box-shadow: inset 0 0 0 1px #FCE795;
-    color: #FCE795 !important; }
+    box-shadow: inset 0 0 0 1px #3c3b3b;
+    color: #f4f7fa !important; }
     input[type="submit"]:hover:active,
     input[type="reset"]:hover:active,
     input[type="button"]:hover:active,
     button:hover:active,
     .button:hover:active {
-      background-color: rgba(252, 231, 149, 0.05); }
+      background-color: rgba(244, 247, 250, 0.05); }
   input[type="submit"]:before, input[type="submit"]:after,
   input[type="reset"]:before,
   input[type="reset"]:after,
@@ -1225,6 +1233,13 @@ button,
     .button.disabled:before,
     .button:disabled:before {
       color: #f4f7fa !important; }
+  input[type="submit"] i.fa,
+  input[type="reset"] i.fa,
+  input[type="button"] i.fa,
+  button i.fa,
+  .button i.fa {
+    float: none !important;
+    vertical-align: middle; }
 
 /* Form */
 form {
@@ -1644,7 +1659,7 @@ ul {
           font-family: "Raleway", Helvetica, sans-serif;
           font-size: 0.6em;
           font-weight: 400;
-          letter-spacing: 0.25em;
+          letter-spacing: 0.15em;
           margin: -0.625em 0 1.7em 0;
           text-transform: uppercase; }
         ul.posts article header > :last-child {
@@ -1701,7 +1716,7 @@ dl {
       font-family: "Raleway", Helvetica, sans-serif;
       font-size: 0.6em;
       font-weight: 400;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.15em;
       margin: -0.625em 0 1.7em 0;
       text-transform: uppercase; }
     .mini-post header .author {
@@ -1780,8 +1795,8 @@ dl {
         display: block;
         font-family: "Raleway", Helvetica, sans-serif;
         font-size: 0.7em;
-        font-weight: 400;
-        letter-spacing: 0.25em;
+        font-weight: 600;
+        letter-spacing: 0.15em;
         margin-top: 0.5em;
         text-transform: uppercase;
         white-space: nowrap; }
@@ -1821,7 +1836,7 @@ dl {
         font-family: "Raleway", Helvetica, sans-serif;
         font-size: 0.6em;
         font-weight: 400;
-        letter-spacing: 0.25em;
+        letter-spacing: 0.15em;
         line-height: 1;
         margin: 0 0 0 2em;
         padding: 0 0 0 2em;
@@ -1949,7 +1964,7 @@ header p {
   font-family: "Raleway", Helvetica, sans-serif;
   font-size: 0.7em;
   font-weight: 400;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.15em;
   line-height: 2.5;
   margin-top: -1em;
   text-transform: uppercase; }
@@ -2000,12 +2015,19 @@ table {
   width: 90em;
   padding-top: 1em;
   text-transform: uppercase;
-  font-size: 1.8em;
+  font-size: 1.5rem;
   position: relative; }
   .grid .gutter-sizer {
     width: 1%; }
   .grid .grid-sizer {
     width: 1%; }
+  .grid ul {
+    padding: 0;
+    margin: 0; }
+    .grid ul li {
+      font-size: 0.55em;
+      padding: 0;
+      margin: 0 0 1em 0; }
   .grid *[class^='col-12'],
   .grid *[class*=' col-12'] {
     width: 100%; }
@@ -2029,21 +2051,32 @@ table {
     width: 58.33333333%; }
   .grid .col-7-r {
     width: 59.33333333%; }
-  .grid *[class^='col-6'],
-  .grid *[class*=' col-6'] {
-    width: 49.49999999%; }
+  .grid .col-6-l {
+    width: 48.66666667%; }
+  .grid .col-6-r {
+    width: 49.33333333%; }
+  .grid *[class^='col-6']-l,
+  .grid *[class*=' col-6']-l {
+    width: 48.66666667%; }
+  .grid *[class^='col-6']-r,
+  .grid *[class*=' col-6']-r {
+    width: 47.66666667%; }
   .grid .col-5-l {
     width: 38.66666667%; }
   .grid .col-5-r {
     width: 39.66666667%; }
-  .grid .col-4-l {
-    width: 32.66666667%; }
-  .grid .col-4-r {
-    width: 33.33333333%; }
-  .grid .col-3-l {
-    width: 24.33333333%; }
-  .grid .col-3-r {
-    width: 25.33333333%; }
+  .grid .col-4 {
+    width: 31%; }
+    .grid .col-4-l {
+      width: 32.66666667%; }
+    .grid .col-4-r {
+      width: 33.33333333%; }
+  .grid .col-3 {
+    width: 23.66666667%; }
+    .grid .col-3-l {
+      width: 24.33333333%; }
+    .grid .col-3-r {
+      width: 25.33333333%; }
   .grid .col-2-l {
     width: 14.66666667%; }
   .grid .col-2-r {
@@ -2052,6 +2085,8 @@ table {
     width: 6.66666667%; }
   .grid .col-1-r {
     width: 7.33333333%; }
+  .grid .spotlight-tile {
+    background-color: #FCE795 !important; }
   .grid .grid-item {
     background: #FbFbFb;
     font-size: 1em;
@@ -2061,11 +2096,12 @@ table {
     border-bottom: solid 5px #f4f7fa;
     cursor: pointer;
     overflow: hidden;
+    position: relative;
     opacity: 0;
-    -moz-transition: all 0.2s ease, border-bottom-color 0.2s ease;
-    -webkit-transition: all 0.2s ease, border-bottom-color 0.2s ease;
-    -ms-transition: all 0.2s ease, border-bottom-color 0.2s ease;
-    transition: all 0.2s ease, border-bottom-color 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
     -moz-transform: translateY(120px);
     -webkit-transform: translateY(120px);
     -ms-transform: translateY(120px);
@@ -2073,29 +2109,132 @@ table {
     .grid .grid-item div.title {
       width: 100%;
       position: absolute;
+      font-size: 0.4em;
+      letter-spacing: 0.1em;
+      padding: 15px 20px;
+      text-align: left;
+      overflow: hidden;
+      opacity: 0;
+      bottom: 0;
+      font-family: "Montserrat", "Raleway", Helvetica, sans-serif;
+      -moz-transition: top, bottom 0.2s ease;
+      -webkit-transition: top, bottom 0.2s ease;
+      -ms-transition: top, bottom 0.2s ease;
+      transition: top, bottom 0.2s ease;
+      -moz-transition: opacity 0.4s ease;
+      -webkit-transition: opacity 0.4s ease;
+      -ms-transition: opacity 0.4s ease;
+      transition: opacity 0.4s ease; }
+      .grid .grid-item div.title.slide-bottom {
+        bottom: -100%; }
+      .grid .grid-item div.title.slide-top {
+        top: -100%; }
+      .grid .grid-item div.title a {
+        float: right;
+        font-size: 1.5em; }
+      .grid .grid-item div.title.display-inactive {
+        display: none !important; }
+    .grid .grid-item i.fa,
+    .grid .grid-item a.fa {
+      padding-top: 4px;
+      font-size: 1.5em;
+      float: right; }
+      .grid .grid-item i.fa.fa-github,
+      .grid .grid-item a.fa.fa-github {
+        padding-top: 0;
+        font-size: 2em; }
+    .grid .grid-item.light div.title {
+      color: #FbFbFb; }
+    .grid .grid-item.origin-bottom div.title {
+      bottom: 0 !important; }
+    .grid .grid-item.origin-top div.title {
+      top: 0 !important; }
+    .grid .grid-item div.text-container {
+      position: absolute;
+      padding: 1em;
+      z-index: 100;
+      color: #3c3b3b; }
+    .grid .grid-item div.details {
+      width: 100%;
+      height: 100%;
+      position: absolute;
       bottom: -100%;
-      font-size: 0.75rem;
+      font-size: 0.5em !important;
       letter-spacing: 0.15rem;
       padding: 15px 20px;
-      text-align: right;
       background-color: #FCE795;
-      -moz-transition: bottom 0.2s ease-out;
-      -webkit-transition: bottom 0.2s ease-out;
-      -ms-transition: bottom 0.2s ease-out;
-      transition: bottom 0.2s ease-out; }
-    .grid .grid-item:hover .grid-item-image-container {
-      -moz-transform: scale(1.05);
-      -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-      transform: scale(1.05); }
-    .grid .grid-item:hover div.title {
-      bottom: 0; }
-    .grid .grid-item:hover:after {
-      -moz-transition: all 0.2s ease;
-      -webkit-transition: all 0.2s ease;
-      -ms-transition: all 0.2s ease;
-      transition: all 0.2s ease;
-      background: rgba(251, 251, 251, 0); }
+      font-family: "Montserrat", "Raleway", Helvetica, sans-serif !important;
+      cursor: auto;
+      -moz-transition: bottom 0.2s ease;
+      -webkit-transition: bottom 0.2s ease;
+      -ms-transition: bottom 0.2s ease;
+      transition: bottom 0.2s ease; }
+      .grid .grid-item div.details h2 {
+        font-family: "Montserrat", "Raleway", Helvetica, sans-serif;
+        font-size: 0.8em !important;
+        margin-bottom: 3em !important; }
+      .grid .grid-item div.details p {
+        font-size: 1.1em !important;
+        color: #4c4c4c !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        margin-bottom: .5em !important; }
+      .grid .grid-item div.details div.work-description {
+        padding: 0 1em;
+        float: left;
+        width: 64.66666667% !important;
+        margin-right: 2%; }
+        .grid .grid-item div.details div.work-description p {
+          text-align: justify; }
+      .grid .grid-item div.details div.work-specs {
+        padding: 0 1em;
+        float: left;
+        width: 33.33333333% !important; }
+      .grid .grid-item div.details.tall div.work-description {
+        float: none;
+        width: 95% !important;
+        margin-right: 0 !important;
+        margin-bottom: 1em; }
+      .grid .grid-item div.details.tall div.work-specs {
+        float: none;
+        width: 95% !important; }
+      .grid .grid-item div.details.display-active {
+        bottom: 0 !important;
+        z-index: 2000 !important; }
+      .grid .grid-item div.details .button {
+        margin-top: 1em;
+        width: 100%; }
+        .grid .grid-item div.details .button i.fa {
+          margin-left: -0.2em;
+          margin-top: -0.1em;
+          margin-right: 0.2em; }
+          .grid .grid-item div.details .button i.fa.fa-apple, .grid .grid-item div.details .button i.fa.fa-android {
+            margin-top: -0.4em; }
+          .grid .grid-item div.details .button i.fa.fa-external-link {
+            margin-top: -0.3em; }
+        .grid .grid-item div.details .button *[class^="fa-file-"],
+        .grid .grid-item div.details .button *[class*=" fa-file-"] {
+          margin-top: -0.3em !important; }
+    .grid .grid-item:hover {
+      border-bottom-color: #FCE795; }
+      .grid .grid-item:hover .grid-item-image-container {
+        -moz-transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05); }
+      .grid .grid-item:hover div.title {
+        opacity: 1;
+        z-index: 1000 !important; }
+        .grid .grid-item:hover div.title.slide-bottom, .grid .grid-item:hover div.title.origin-bottom {
+          bottom: 0 !important; }
+        .grid .grid-item:hover div.title.slide-top, .grid .grid-item:hover div.title.origin-top {
+          top: 0; }
+      .grid .grid-item:hover:after {
+        -moz-transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        background: rgba(251, 251, 251, 0); }
     .grid .grid-item:after {
       -moz-transition: all 0.2s ease;
       -webkit-transition: all 0.2s ease;
@@ -2109,13 +2248,17 @@ table {
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(251, 251, 251, 0.2); }
+      background: rgba(251, 251, 251, 0.1); }
+  @media screen and (max-width: 736px) {
+    .grid .grid-item {
+      min-height: 400px !important;
+      height: auto; } }
   .grid .width2 {
     width: 65%; }
   .grid .half-height {
     height: 200px !important; }
   .grid .heightplushalf {
-    height: 600px; }
+    height: 610px; }
   .grid .width-full {
     width: 100%; }
   .grid .grid-item-image-container {
@@ -2202,7 +2345,7 @@ body {
         font-family: "Raleway", Helvetica, sans-serif;
         font-size: 0.7em;
         font-weight: 400;
-        letter-spacing: 0.25em;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
         text-align: center; }
   #header .main {
@@ -2325,9 +2468,9 @@ span.bold {
 a {
   cursor: pointer; }
 
-p {
-  padding: 1em;
-  margin: 0; }
+.fa {
+  text-decoration: none !important;
+  border: none !important; }
 
 .map-image {
   width: 100%;
@@ -2342,11 +2485,6 @@ p {
   width: 100%;
   height: 100%;
   letter-spacing: normal; }
-
-p.image-text {
-  position: absolute;
-  z-index: 100;
-  color: #3c3b3b; }
 
 .image-container {
   position: relative;
@@ -2392,6 +2530,42 @@ p.image-text {
   width: 100%;
   background: url(../space.jpg) center/cover no-repeat !important; }
 
+#mmp {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../mmp.jpg) center/cover no-repeat !important; }
+
+#aber-links {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../aber-links-logo.png) center/75% no-repeat !important; }
+
+#apples-and-pairs {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../apples-and-pairs-logo.png) center/75% no-repeat !important; }
+
+#orbitaljs {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../orbitaljs.png) center/cover no-repeat !important; }
+
+#wordwarz {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../wordwarz.png) center/cover no-repeat !important; }
+
+#tyfi {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url(../tyfi_logo_full.png) center/55% no-repeat !important; }
+
 #mob {
   display: block;
   position: relative;
@@ -2401,9 +2575,9 @@ p.image-text {
 
 .screen-slider {
   position: absolute;
-  height: 67.1%;
+  height: 78.1%;
   width: 62.5%;
-  top: 16.5%;
+  top: 12.5%;
   left: 18.8%; }
 
 .unslider-wrap {
@@ -2416,27 +2590,27 @@ p.image-text {
 #slide1 {
   width: 100%;
   height: 100%;
-  background: url(../unnamed.png) center/100% no-repeat !important; }
+  background: url(../unnamed.png) center/98% no-repeat !important; }
 
 #slide2 {
   width: 100%;
   height: 100%;
-  background: url(../unnamed2.png) center/100% no-repeat !important; }
+  background: url(../unnamed2.png) center/98% no-repeat !important; }
 
 #slide3 {
   width: 100%;
   height: 100%;
-  background: url(../unnamed3.png) center/100% no-repeat !important; }
+  background: url(../unnamed3.png) center/98% no-repeat !important; }
 
 #slide4 {
   width: 100%;
   height: 100%;
-  background: url(../unnamed4.png) center/100% no-repeat !important; }
+  background: url(../unnamed4.png) center/98% no-repeat !important; }
 
 #slide5 {
   width: 100%;
   height: 100%;
-  background: url(../unnamed5.png) center/100% no-repeat !important; }
+  background: url(../unnamed5.png) center/98% no-repeat !important; }
 
 .nav-cont {
   font-size: 0.8em;
@@ -2447,7 +2621,7 @@ p.image-text {
     font-family: "Raleway", Helvetica, sans-serif;
     font-size: 0.7em;
     font-weight: 400;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     text-align: center; }
 
@@ -2483,17 +2657,6 @@ p.image-text {
     float: left;
     padding-bottom: 56.25%; }
   .mob-container:after {
-    content: '';
-    display: table;
-    clear: both; }
-
-.marvel-device.nexus5 {
-  width: 75% !important; }
-  .marvel-device.nexus5:before {
-    content: '';
-    float: left;
-    padding-bottom: 56.25%; }
-  .marvel-device.nexus5:after {
     content: '';
     display: table;
     clear: both; }
@@ -2589,7 +2752,7 @@ p.image-text {
     font-size: 0.7em;
     padding: .5em 1em 2em 1em;
     font-weight: 400;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     float: right; }
 
@@ -2644,7 +2807,7 @@ p.image-text {
           font-family: "Raleway", Helvetica, sans-serif;
           font-size: 0.6em;
           font-weight: 400;
-          letter-spacing: 0.25em;
+          letter-spacing: 0.15em;
           margin-bottom: 0;
           text-decoration: none;
           text-transform: uppercase; }
