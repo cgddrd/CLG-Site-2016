@@ -2094,7 +2094,6 @@ table {
     height: 400px;
     margin-bottom: 1%;
     border-bottom: solid 5px #f4f7fa;
-    cursor: pointer;
     overflow: hidden;
     position: relative;
     opacity: 0;
@@ -2106,6 +2105,17 @@ table {
     -webkit-transform: translateY(120px);
     -ms-transform: translateY(120px);
     transform: translateY(120px); }
+    .grid .grid-item > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 4000;
+      border: none !important;
+      font-size: 1em !important;
+      color: #646464 !important; }
+    .grid .grid-item.detail {
+      cursor: pointer; }
     .grid .grid-item div.title {
       width: 100%;
       position: absolute;
@@ -2154,6 +2164,10 @@ table {
       padding: 1em;
       z-index: 100;
       color: #3c3b3b; }
+      .grid .grid-item div.text-container h2,
+      .grid .grid-item div.text-container ul,
+      .grid .grid-item div.text-container li {
+        font-family: "Montserrat", "Raleway", Helvetica, sans-serif !important; }
     .grid .grid-item div.details {
       width: 100%;
       height: 100%;

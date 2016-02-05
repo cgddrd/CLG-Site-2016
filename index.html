@@ -263,17 +263,46 @@
 
 			</div>
 
-			<div class="grid-item col-3-l">
+			<div class="grid-item col-4-l detail">
 
 				<div class="grid-item-image-container">
 					<span id="violet"></span>
 				</div>
 
-				<div class="title">Shrinking Violets // <span class="bold">Logo Design</span></div>
+				<div class="title">
+					Shrinking Violets // <span class="bold">Branding</span>
+					<i class="fa fa-chevron-up"></i>
+				</div>
+
+				<div class="details tall">
+
+					<h2>
+						Shrinking Violets // <span class="bold">Branding</span>
+						<i class="fa fa-chevron-down"></i>
+					</h2>
+
+					<div class="work-description">
+
+
+						<p>
+							Shrinking Violets is a small, independant furniture store specialising in the "up-cycling" of vintage furniture and antique household items.
+						</p>
+
+						<p>
+							As part of their expansion plans, I was approached to produce a new logo that would help the business to grow its brand and marketability, whilst continuing to reflect their "personal" touch to customer service and requirements.
+						</p>
+
+						<p>
+							Whilst my work was not subsequently selected for use by the business, it was certainly an interesting project to work on.
+						</p>
+
+					</div>
+
+				</div>
 
 			</div>
 
-			<div class="grid-item work col-9-r">
+			<div class="grid-item work col-8-r">
 
 				<div class="image-container">
 
@@ -324,7 +353,8 @@
 						</p>
 
 						<p>
-							 Receiving a first-class grade for the accomplishments made, research on this project is continuing in conjuction with the <a href="http://www.aber.ac.uk/en/cs/research/ir/">Intelligent Robotics Group</a> at Aberystwyth University, as and when time permits.
+							Receiving a first-class grade for the accomplishments made, research on this project is continuing in conjuction with the <a href="http://www.aber.ac.uk/en/cs/research/ir/">Intelligent Robotics Group</a> at Aberystwyth University, as and when time
+							permits.
 						</p>
 
 					</div>
@@ -332,11 +362,13 @@
 					<div class="work-specs">
 
 						<p>
-							<span class="bold">Key Technologies</span><br />Python, C++, OpenCV
+							<span class="bold">Key Technologies</span>
+							<br />Python, C++, OpenCV
 						</p>
 
 						<p>
-							<span class="bold">Duration</span><br />3 months (on-going)
+							<span class="bold">Duration</span>
+							<br />3 months (on-going)
 						</p>
 
 
@@ -392,7 +424,8 @@
 						</p> -->
 
 						<p>
-							Whilst working as a software engineering intern, I became the sole designer and developer for the company's first publically-available mobile application, designed to complement a brand-new training package introducing new customers to the concepts of probing.
+							Whilst working as a software engineering intern, I became the sole designer and developer for the company's first publically-available mobile application, designed to complement a brand-new training package introducing new customers to the concepts of
+							probing.
 						</p>
 
 						<!-- <p>
@@ -438,29 +471,43 @@
 
 			</div> -->
 
+
+
+
 			<div class="grid-item col-5-l half-height">
 
-				<div class="grid-item-image-container">
-					<span id="aber-links"></span>
-				</div>
+				<a href="http://aber-links.co.uk">
 
-				<div class="title">
-					Aber Links (St. John Cymru-Wales) // <span class="bold">Web Design</span>
-					<a class="fa fa-external-link" href="http://aber-links.co.uk/"></a>
-				</div>
+					<div class="grid-item-image-container">
+						<span id="aber-links"></span>
+					</div>
+
+
+					<div class="title">
+						Aber Links (St. John Cymru-Wales) // <span class="bold">Web Design</span>
+						<i class="fa fa-external-link"></i>
+					</div>
+
+				</a>
+
 
 			</div>
 
+
 			<div class="grid-item col-3-l half-height">
 
-				<div class="grid-item-image-container">
-					<span id="tyfi"></span>
-				</div>
+				<a href="http://www.ty-fidirectcare.co.uk/">
 
-				<div class="title">
-					Ty.Fidirect Care // <span class="bold">Web Design</span>
-					<a class="fa fa-external-link" href="http://www.ty-fidirectcare.co.uk/"></a>
-				</div>
+					<div class="grid-item-image-container">
+						<span id="tyfi"></span>
+					</div>
+
+					<div class="title">
+						Ty.Fidirect Care // <span class="bold">Web Design</span>
+						<i class="fa fa-external-link"></i>
+					</div>
+
+				</a>
 
 			</div>
 
@@ -506,14 +553,18 @@
 
 			<div class="grid-item col-7-r work light">
 
+				<a href="http://www.bbc.co.uk/news/uk-wales-south-west-wales-18793717">
+
 				<div class="grid-item-image-container">
 					<span id="space"></span>
 				</div>
 
 				<div class="title">
 					Race to Space // <span class="bold">Project</span>
-					<a class="fa fa-external-link" href="http://www.bbc.co.uk/news/uk-wales-south-west-wales-18793717"></a>
+					<i class="fa fa-external-link"></i>
 				</div>
+
+				</a>
 
 			</div>
 
@@ -693,14 +744,13 @@
 
 		});
 
-		// $(".details").on('mouseleave', hideDetails);
-		// $(".details i").on('click', hideDetails);
+		$(".details").on('mouseleave', hideDetails);
+		$(".details i").on('click', hideDetails);
 
 		function hideDetails(evt) {
 			$(this).removeClass('display-active');
 			$(this).parent().children('.title').removeClass('display-inactive');
 		}
-
 	</script>
 
 </body>

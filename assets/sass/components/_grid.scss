@@ -182,13 +182,28 @@
     height: 400px;
     margin-bottom: 1%;
     border-bottom: solid 5px _palette(border);
-    cursor: pointer;
     overflow: hidden;
     position: relative;
     opacity: 0;
 
     @include vendor('transition', ( 'all #{_duration(transition)} ease' ));
     @include vendor('transform', 'translateY(120px)');
+
+    > a {
+
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 4000;
+        border: none !important;
+        font-size: 1em !important;
+        color: _palette(fg) !important;
+    }
+
+    &.detail {
+      cursor: pointer;
+    }
 
     div.title {
 
@@ -265,6 +280,13 @@
       padding: 1em;
       z-index: 100;
       color: #3c3b3b;
+
+      h2,
+      ul,
+      li {
+        font-family: _font(family-grid) !important;
+      }
+
     }
 
     div.details {
