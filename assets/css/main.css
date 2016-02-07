@@ -927,7 +927,6 @@ body {
 /* Type */
 body, input, select, textarea {
   color: #646464;
-  font-family: "Raleway", "Source Sans Pro", Helvetica, sans-serif;
   font-size: 14pt;
   font-weight: 400;
   line-height: 1.75; }
@@ -946,6 +945,12 @@ body, input, select, textarea {
   @media screen and (max-width: 480px) {
     body, input, select, textarea {
       font-size: 12pt; } }
+
+body {
+  font-family: "Raleway", "Source Sans Pro", Helvetica, sans-serif; }
+
+input, select, textarea {
+  font-family: "Montserrat", Helvetica, sans-serif; }
 
 a {
   -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
@@ -1139,7 +1144,7 @@ button,
   color: #3c3b3b !important;
   cursor: pointer;
   display: inline-block;
-  font-family: "Montserrat", "Raleway", Helvetica, sans-serif;
+  font-family: "Montserrat", Helvetica, sans-serif;
   font-size: 0.8em;
   font-weight: 600;
   height: 4.8125em;
@@ -1149,7 +1154,8 @@ button,
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  white-space: nowrap; }
+  white-space: nowrap;
+  width: 100%; }
   input[type="submit"]:hover,
   input[type="reset"]:hover,
   input[type="button"]:hover,
@@ -1240,6 +1246,22 @@ button,
   .button i.fa {
     float: none !important;
     vertical-align: middle; }
+
+.button {
+  margin-top: 1em;
+  width: 100%; }
+  .button i.fa {
+    margin-left: -0.2em;
+    margin-top: -0.1em;
+    margin-right: 0.4em;
+    font-size: 1.5em; }
+    .button i.fa.fa-apple, .button i.fa.fa-android, .button i.fa.fa-linkedin {
+      margin-top: -0.4em; }
+    .button i.fa.fa-external-link {
+      margin-top: -0.3em; }
+  .button *[class^="fa-file-"],
+  .button *[class*=" fa-file-"] {
+    margin-top: -0.3em !important; }
 
 /* Form */
 form {
@@ -1533,7 +1555,8 @@ ul {
     ul.actions li {
       display: inline-block;
       padding: 0 1.5em 0 0;
-      vertical-align: middle; }
+      vertical-align: middle;
+      width: 100%; }
       ul.actions li:last-child {
         padding-right: 0; }
     ul.actions.pagination .next {
@@ -2126,7 +2149,7 @@ table {
       overflow: hidden;
       opacity: 0;
       bottom: 0;
-      font-family: "Montserrat", "Raleway", Helvetica, sans-serif;
+      font-family: "Montserrat", Helvetica, sans-serif;
       -moz-transition: top, bottom 0.2s ease;
       -webkit-transition: top, bottom 0.2s ease;
       -ms-transition: top, bottom 0.2s ease;
@@ -2153,6 +2176,9 @@ table {
       .grid .grid-item a.fa.fa-github {
         padding-top: 0;
         font-size: 2em; }
+    .grid .grid-item .button i.fa,
+    .grid .grid-item .button a.fa {
+      margin-right: 0.2em; }
     .grid .grid-item.light div.title {
       color: #FbFbFb; }
     .grid .grid-item.origin-bottom div.title {
@@ -2167,7 +2193,7 @@ table {
       .grid .grid-item div.text-container h2,
       .grid .grid-item div.text-container ul,
       .grid .grid-item div.text-container li {
-        font-family: "Montserrat", "Raleway", Helvetica, sans-serif !important; }
+        font-family: "Montserrat", Helvetica, sans-serif !important; }
     .grid .grid-item div.details {
       width: 100%;
       height: 100%;
@@ -2177,14 +2203,14 @@ table {
       letter-spacing: 0.15rem;
       padding: 15px 20px;
       background-color: #FCE795;
-      font-family: "Montserrat", "Raleway", Helvetica, sans-serif !important;
+      font-family: "Montserrat", Helvetica, sans-serif !important;
       cursor: auto;
       -moz-transition: bottom 0.2s ease;
       -webkit-transition: bottom 0.2s ease;
       -ms-transition: bottom 0.2s ease;
       transition: bottom 0.2s ease; }
       .grid .grid-item div.details h2 {
-        font-family: "Montserrat", "Raleway", Helvetica, sans-serif;
+        font-family: "Montserrat", Helvetica, sans-serif;
         font-size: 0.8em !important;
         margin-bottom: 3em !important; }
       .grid .grid-item div.details p {
@@ -2215,20 +2241,6 @@ table {
       .grid .grid-item div.details.display-active {
         bottom: 0 !important;
         z-index: 2000 !important; }
-      .grid .grid-item div.details .button {
-        margin-top: 1em;
-        width: 100%; }
-        .grid .grid-item div.details .button i.fa {
-          margin-left: -0.2em;
-          margin-top: -0.1em;
-          margin-right: 0.2em; }
-          .grid .grid-item div.details .button i.fa.fa-apple, .grid .grid-item div.details .button i.fa.fa-android {
-            margin-top: -0.4em; }
-          .grid .grid-item div.details .button i.fa.fa-external-link {
-            margin-top: -0.3em; }
-        .grid .grid-item div.details .button *[class^="fa-file-"],
-        .grid .grid-item div.details .button *[class*=" fa-file-"] {
-          margin-top: -0.3em !important; }
     .grid .grid-item:hover {
       border-bottom-color: #FCE795; }
       .grid .grid-item:hover .grid-item-image-container {
@@ -2769,6 +2781,8 @@ a {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     float: right; }
+  #footer p {
+    margin-bottom: 0; }
 
 /* Menu */
 #menu {

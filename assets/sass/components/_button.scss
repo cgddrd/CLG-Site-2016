@@ -36,6 +36,7 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
+		width: 100%;
 
 		&:hover {
 			box-shadow: inset 0 0 0 1px _palette(fg-bold);
@@ -90,6 +91,38 @@
 		i.fa {
 			float: none !important;
 			vertical-align: middle;
+		}
+
+	}
+
+	// CG - Button styles
+
+	.button {
+
+		margin-top: 1em;
+		width: 100%;
+
+		i.fa {
+			margin-left: -0.2em;
+			margin-top: -0.1em;
+			margin-right: 0.4em;
+			font-size: 1.5em;
+
+			&.fa-apple,
+			&.fa-android,
+			&.fa-linkedin  {
+				margin-top: -0.4em;
+			}
+
+			&.fa-external-link {
+				margin-top: -0.3em;
+			}
+
+		}
+
+		*[class^="fa-file-"],
+		*[class*=" fa-file-"] {
+			margin-top: -0.3em !important;
 		}
 
 	}

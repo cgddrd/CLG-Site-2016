@@ -169,10 +169,15 @@
 			<div class="nav-cont">
 				<nav class="links">
 					<ul>
-						<li><a id="nav-item-work" href="#">Work</a></li>
-						<li><a href="#">Photography</a></li>
+
+						<!-- <li><a href="#">Work</a></li> -->
+						<!-- <li><a href="#">Photography</a></li> -->
+
+						<li><a href="#">LinkedIn</a></li>
+						<li><a href="#">Github</a></li>
+						<li><a href="#menu">Contact</a></li>
 						<li><a href="#">Curriculum Vitae</a></li>
-						<li><a href="#">Contact</a></li>
+
 					</ul>
 				</nav>
 			</div>
@@ -204,40 +209,78 @@
 
 			<!-- Links -->
 			<section>
-				<ul class="links">
+
+				<h3>Get In Touch</h3>
+
+				<form method="post" action="//formspree.io/hello@connorlukegoddard.com" method="POST">
+					<div class="row uniform">
+
+						<div class="12u$">
+							<input type="text" name="name" id="form-name" value="" placeholder="Your Name" required="true"/>
+						</div>
+						<div class="12u$">
+							<input type="email" name="_replyto" id="form-email" value="" placeholder="Your Email" required="true"/>
+						</div>
+
+						<div class="12u$">
+							<textarea name="message" id="form-message" placeholder="How can I help?" rows="6" required="true"></textarea>
+						</div>
+
+						<div class="12u$">
+							<ul class="actions">
+								<li>
+									<input type="submit" value="Send Message" />
+								</li>
+							</ul>
+						</div>
+
+						<input type="text" name="_gotcha" style="display:none" />
+
+					</div>
+				</form>
+
+				<!-- <hr />
+
+				<a class="button" href="https://twitter.com/cgddrd"><i class="fa fa-twitter"></i>Twitter</a>
+				<a class="button" href="http://uk.linkedin.com/in/cgddrd"><i class="fa fa-linkedin"></i>LinkedIn</a>
+				<a class="button" href="https://github.com/cgddrd"><i class="fa fa-github"></i>Github</a> -->
+
+				<!-- <ul class="links">
 					<li>
-						<a href="#">
-							<h3>Lorem ipsum</h3>
-							<p>Feugiat tempus veroeros dolor</p>
+						<a href="http://uk.linkedin.com/in/cgddrd">
+							LinkedIn
+						</a>
+						<a href="https://twitter.com/cgddrd">
+							Twitter
+						</a>
+						<a href="https://github.com/cgddrd">
+							Github
+						</a>
+						<a href="mailto://hello@connorlukegoddard.com">
+							Email
 						</a>
 					</li>
-					<li>
-						<a href="#">
-							<h3>Dolor sit amet</h3>
-							<p>Sed vitae justo condimentum</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<h3>Feugiat veroeros</h3>
-							<p>Phasellus sed ultricies mi congue</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<h3>Etiam sed consequat</h3>
-							<p>Porta lectus amet ultricies</p>
-						</a>
-					</li>
-				</ul>
+				</ul> -->
+
+
 			</section>
 
+
+				<!-- <li>
+					<a href="#">
+						<h3>Dolor sit amet</h3>
+						<p>Sed vitae justo condimentum</p>
+					</a>
+				</li> -->
+
+
+
 			<!-- Actions -->
-			<section>
+			<!-- <section>
 				<ul class="actions vertical">
 					<li><a href="#" class="button big fit">Log In</a></li>
 				</ul>
-			</section>
+			</section> -->
 
 		</section>
 
@@ -285,7 +328,7 @@
 
 
 						<p>
-							Shrinking Violets is a small, independant furniture store specialising in the "up-cycling" of vintage furniture and antique household items.
+							<a href="https://www.facebook.com/ShrinkingVioletsShabbyChic">Shrinking Violets</a> is a small, independant furniture store specialising in the "up-cycling" of vintage furniture and antique household items.
 						</p>
 
 						<p>
@@ -293,7 +336,7 @@
 						</p>
 
 						<p>
-							Whilst my work was not subsequently selected for use by the business, it was certainly an interesting project to work on.
+							Whilst my work was not subsequently selected for use by the business, it was certainly an interesting project to work on nevertheless.
 						</p>
 
 					</div>
@@ -370,8 +413,6 @@
 							<span class="bold">Duration</span>
 							<br />3 months (on-going)
 						</p>
-
-
 
 						<a class="button" href="#"><i class="fa fa-github"></i> Get it on Github</a>
 
@@ -603,27 +644,22 @@
 		<section id="footer">
 			<ul class="icons">
 				<li>
-					<a href="#" class="fa-twitter">
+					<a href="https://twitter.com/cgddrd" class="fa-twitter">
 						<span class="label">Twitter</span>
 					</a>
 				</li>
 				<li>
-					<a href="#" class="fa-facebook">
-						<span class="label">Facebook</span>
+					<a href="http://uk.linkedin.com/in/cgddrd" class="fa-linkedin">
+						<span class="label">LinkedIn</span>
 					</a>
 				</li>
 				<li>
-					<a href="#" class="fa-instagram">
-						<span class="label">Instagram</span>
+					<a href="https://github.com/cgddrd" class="fa-github">
+						<span class="label">Github</span>
 					</a>
 				</li>
 				<li>
-					<a href="#" class="fa-rss">
-						<span class="label">RSS</span>
-					</a>
-				</li>
-				<li>
-					<a href="#" class="fa-envelope">
+					<a href="mailto://hello@connorlukegoddard.com" class="fa-envelope">
 						<span class="label">Email</span>
 					</a>
 				</li>
@@ -744,8 +780,8 @@
 
 		});
 
-		$(".details").on('mouseleave', hideDetails);
-		$(".details i").on('click', hideDetails);
+		 $(".details").on('mouseleave', hideDetails);
+		 $(".details i").on('click', hideDetails);
 
 		function hideDetails(evt) {
 			$(this).removeClass('display-active');
