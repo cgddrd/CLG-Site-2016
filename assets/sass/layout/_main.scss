@@ -148,15 +148,14 @@ a {
 .screen-slider {
 
   position: absolute;
-  // height: 67.1%;
-  // width: 62.5%;
-  // top: 16.5%;
-  // left: 18.8%;
-
   height: 78.1%;
   width: 62.5%;
   top: 12.5%;
   left: 18.8%;
+
+  ul {
+    height: 100%;
+  }
 
 }
 

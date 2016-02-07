@@ -48,3 +48,13 @@
 		accent:						#FCE795,
 		accent-alt: #f4f7fa
 	);
+
+	$grid: (
+		tile-height: 400px,
+		tile-margin-bottom: 10px,
+		tile-gutter: 1%,
+		tile-half-height: 200px,
+		tile-width-extended: 65%,
+		tile-height-plus-half: 600px,
+		tile-width-full: 100
+	);

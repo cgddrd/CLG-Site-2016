@@ -26,6 +26,41 @@
 .already-visible {
   transform: translateY(0); }
 
+.grid.no-js {
+  overflow: hidden; }
+  .grid.no-js .grid-item {
+    margin-right: 1%;
+    opacity: 1;
+    -moz-transition: none;
+    -webkit-transition: none;
+    -ms-transition: none;
+    transition: none;
+    -moz-transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none; }
+  .grid.no-js .grid-item-image-container,
+  .grid.no-js .grid-item-image-container:hover {
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    -ms-transform: none !important;
+    transform: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important; }
+  .grid.no-js #mob {
+    background-size: 50% !important; }
+    .grid.no-js #mob .screen-slider {
+      position: absolute;
+      height: 78.1%;
+      width: 42.5%;
+      top: 12.5%;
+      left: 28.5%; }
+  .grid.no-js .half-height,
+  .grid.no-js .heightplushalf {
+    height: 400px !important; }
+
 /* Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -2115,11 +2150,12 @@ table {
     font-size: 1em;
     letter-spacing: 0.15em;
     height: 400px;
-    margin-bottom: 1%;
+    margin-bottom: 10px;
     border-bottom: solid 5px #f4f7fa;
     overflow: hidden;
     position: relative;
     opacity: 0;
+    float: left;
     -moz-transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
@@ -2282,11 +2318,11 @@ table {
   .grid .width2 {
     width: 65%; }
   .grid .half-height {
-    height: 200px !important; }
+    height: 200px; }
   .grid .heightplushalf {
     height: 610px; }
   .grid .width-full {
-    width: 100%; }
+    width: 100; }
   .grid .grid-item-image-container {
     width: 100%;
     height: 100%;
@@ -2605,6 +2641,8 @@ a {
   width: 62.5%;
   top: 12.5%;
   left: 18.8%; }
+  .screen-slider ul {
+    height: 100%; }
 
 .unslider-wrap {
   height: 100% !important; }

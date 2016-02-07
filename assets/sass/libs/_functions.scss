@@ -32,3 +32,10 @@
 @function _size($keys...) {
 	@return val($size, $keys...);
 }
+
+/// CG - Gets a grid value.
+/// @param {string} $keys Key(s).
+/// @return {string} Value.
+@function _grid($keys...) {
+	@return val($grid, $keys...);
+}

@@ -1,0 +1,45 @@
+.grid {
+
+  &.no-js {
+
+    overflow: hidden;
+
+    .grid-item {
+
+      margin-right: _grid(tile-gutter);
+      opacity: 1;
+
+      @include vendor('transition', 'none');
+      @include vendor('transform', 'none');
+
+    }
+
+    .grid-item-image-container,
+    .grid-item-image-container:hover {
+      @include vendor('transform', 'none !important');
+      @include vendor('transition', 'none !important');
+    }
+
+    #mob {
+
+      background-size: 50% !important;
+
+      .screen-slider {
+
+        position: absolute;
+        height: 78.1%;
+        width: 42.5%;
+        top: 12.5%;
+        left: 28.5%;
+
+      }
+
+    }
+
+    .half-height,
+    .heightplushalf {
+      height: _grid(tile-height) !important;
+    }
+
+  }
+}

@@ -8,10 +8,11 @@
   position: relative;
 
   .gutter-sizer {
-    width: 1%;
+    width: _grid(tile-gutter);
   }
+
   .grid-sizer {
-    width: 1%;
+    width: _grid(tile-gutter);
   }
 
   ul {
@@ -179,12 +180,13 @@
     background: _palette(bg);
     font-size: 1em;
     letter-spacing: 0.15em;
-    height: 400px;
-    margin-bottom: 1%;
+    height: _grid(tile-height);
+    margin-bottom: _grid(tile-margin-bottom);
     border-bottom: solid 5px _palette(border);
     overflow: hidden;
     position: relative;
     opacity: 0;
+    float: left;
 
     @include vendor('transition', ( 'all #{_duration(transition)} ease' ));
     @include vendor('transform', 'translateY(120px)');
@@ -257,10 +259,10 @@
 
       i.fa,
       a.fa {
-        
+
         margin-right: 0.2em;
       }
-      
+
     }
 
     &.light {
@@ -422,17 +424,20 @@
   }
 
   .width2 {
-    width: 65%;
-    //	width: 66.666666%;
+  //  width: 65%;
+    width: _grid(tile-width-extended);
   }
   .half-height {
-    height: 200px !important;
+    //height: 200px !important;
+    height: _grid(tile-half-height);
   }
   .heightplushalf {
-    height: 600px + 10px;
+    //height: 600px + 10px;
+    height: _grid(tile-height-plus-half) + _grid(tile-margin-bottom);
   }
   .width-full {
-    width: 100%;
+  //  width: 100%;
+    width: _grid(tile-width-full);
   }
 
   .grid-item-image-container {
