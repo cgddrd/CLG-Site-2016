@@ -198,40 +198,6 @@ a {
   background: url(../unnamed5.png) center/98% no-repeat !important;
 }
 
-.nav-cont {
-  font-size: 0.8em;
-  height: 100%;
-  padding: 0.5em;
-  background: _palette(bg-alt);
-
-  a {
-    font-family: _font(family-heading);
-    font-size: 0.7em;
-    font-weight: _font(weight-heading);
-    letter-spacing: _font(kerning-heading);
-    text-transform: uppercase;
-    text-align: center;
-  }
-}
-#logo {
-
-  height: 100px;
-  margin: 0 2em 1em 0;
-  overflow: hidden;
-  font-size: 0.8em;
-  display: flex;
-  height: 100%;
-
-  .logo-cont {
-    min-width: 100px;
-    width: 100px;
-    height: 100%;
-    padding: 1em;
-    background: #fff url(../logo_new.png) center/60% no-repeat;
-    border: solid 4px _palette(accent);
-  }
-
-}
 @media screen and (max-width: 768px) {
   .grid-sizer,
   .grid-item {

@@ -971,9 +971,12 @@ body, input, select, textarea {
   @media screen and (max-width: 1280px) {
     body, input, select, textarea {
       font-size: 12pt; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    body, input, select, textarea {
+      font-size: 10pt !important; } }
   @media screen and (max-width: 980px) {
     body, input, select, textarea {
-      font-size: 12pt; } }
+      font-size: 10pt; } }
   @media screen and (max-width: 736px) {
     body, input, select, textarea {
       font-size: 12pt; } }
@@ -2194,6 +2197,8 @@ table {
       -webkit-transition: opacity 0.4s ease;
       -ms-transition: opacity 0.4s ease;
       transition: opacity 0.4s ease; }
+      .grid .grid-item div.title.touch {
+        opacity: 1 !important; }
       .grid .grid-item div.title.slide-bottom {
         bottom: -100%; }
       .grid .grid-item div.title.slide-top {
@@ -2250,7 +2255,7 @@ table {
         font-size: 0.8em !important;
         margin-bottom: 3em !important; }
       .grid .grid-item div.details p {
-        font-size: 1.1em !important;
+        font-size: 1em;
         color: #4c4c4c !important;
         letter-spacing: normal !important;
         text-transform: none !important;
@@ -2258,7 +2263,7 @@ table {
       .grid .grid-item div.details div.work-description {
         padding: 0 1em;
         float: left;
-        width: 64.66666667% !important;
+        width: 64.66666667%;
         margin-right: 2%; }
         .grid .grid-item div.details div.work-description p {
           text-align: justify; }
@@ -2268,7 +2273,7 @@ table {
         width: 33.33333333% !important; }
       .grid .grid-item div.details.tall div.work-description {
         float: none;
-        width: 95% !important;
+        width: 95%;
         margin-right: 0 !important;
         margin-bottom: 1em; }
       .grid .grid-item div.details.tall div.work-specs {
@@ -2311,10 +2316,6 @@ table {
       left: 0;
       right: 0;
       background: rgba(251, 251, 251, 0.1); }
-  @media screen and (max-width: 736px) {
-    .grid .grid-item {
-      min-height: 400px !important;
-      height: auto; } }
   .grid .width2 {
     width: 65%; }
   .grid .half-height {
@@ -2330,6 +2331,54 @@ table {
     -webkit-transition: -webkit-transform 0.2s ease-out;
     -ms-transition: -ms-transform 0.2s ease-out;
     transition: transform 0.2s ease-out; }
+
+@media screen and (max-width: 980px) {
+  .grid .grid-item {
+    font-size: 1.1rem !important; }
+    .grid .grid-item .title {
+      opacity: 1 !important; }
+    .grid .grid-item .details p {
+      font-size: 1em !important; } }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .grid .grid-item .details p {
+    font-size: 0.9em !important; }
+  .grid .grid-item .details a.button {
+    font-size: 0.7em !important; } }
+
+@media screen and (max-width: 736px) {
+  .grid .grid-item {
+    min-height: 400px !important;
+    font-size: 0.6em !important; }
+    .grid .grid-item .title {
+      opacity: 1 !important;
+      font-size: 0.6em !important; }
+    .grid .grid-item div.work-description {
+      float: none !important;
+      width: 100% !important;
+      margin-right: 0 !important; }
+    .grid .grid-item div.work-specs {
+      float: none !important;
+      width: 100% !important; }
+  .grid .text-container ul {
+    font-size: 1rem !important; } }
+
+@media screen and (max-width: 480px) {
+  .grid .grid-item {
+    min-height: 400px !important;
+    font-size: 1rem !important; }
+    .grid .grid-item .title {
+      opacity: 1 !important;
+      font-size: 0.6em !important; }
+    .grid .grid-item div.work-description {
+      float: none !important;
+      width: 100% !important;
+      margin-right: 0 !important; }
+    .grid .grid-item div.work-specs {
+      float: none !important;
+      width: 100% !important; }
+  .grid .text-container ul {
+    font-size: 1.2rem !important; } }
 
 /* Header */
 body {
@@ -2363,16 +2412,33 @@ body {
     -webkit-flex-grow: 1;
     -ms-flex-grow: 1;
     flex-grow: 1;
-    -ms-flex: 1; }
-  #header .nav-cont {
+    -ms-flex: 1;
+    font-size: 0.8em;
+    height: 100%;
+    padding: 0.5em;
+    background: #fff;
     border-bottom: solid 2px #e9ece5; }
-  #header #logo-img {
-    height: 80%;
-    max-height: 80%;
-    width: auto;
-    max-width: auto;
-    padding: .3em 1em .3em 2em;
-    margin: 0 auto; }
+    #header > div.nav-cont a {
+      font-family: "Raleway", Helvetica, sans-serif;
+      font-size: 0.7em;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: center; }
+  #header #logo {
+    height: 100px;
+    margin: 0 2em 1em 0;
+    overflow: hidden;
+    font-size: 0.8em;
+    display: flex;
+    height: 100%; }
+    #header #logo .logo-cont {
+      min-width: 100px;
+      width: 100px;
+      height: 100%;
+      padding: 1em;
+      background: #fff url(../logo_new.png) center/60% no-repeat;
+      border: solid 4px #FCE795; }
   #header a {
     color: inherit;
     text-decoration: none; }
@@ -2478,12 +2544,17 @@ body {
       display: none; } }
   @media screen and (max-width: 736px) {
     #header {
-      height: 2.75em;
+      height: 50px;
       line-height: 2.75em; }
       #header h1 {
         padding: 0 0 0 1em; }
       #header .main .search {
-        display: none; } }
+        display: none; }
+      #header #logo {
+        margin: 0 1em 1em 0; }
+        #header #logo .logo-cont {
+          min-width: 50px;
+          width: 50px; } }
 
 /* Wrapper */
 #wrapper {
@@ -2676,34 +2747,6 @@ a {
   height: 100%;
   background: url(../unnamed5.png) center/98% no-repeat !important; }
 
-.nav-cont {
-  font-size: 0.8em;
-  height: 100%;
-  padding: 0.5em;
-  background: #fff; }
-  .nav-cont a {
-    font-family: "Raleway", Helvetica, sans-serif;
-    font-size: 0.7em;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-align: center; }
-
-#logo {
-  height: 100px;
-  margin: 0 2em 1em 0;
-  overflow: hidden;
-  font-size: 0.8em;
-  display: flex;
-  height: 100%; }
-  #logo .logo-cont {
-    min-width: 100px;
-    width: 100px;
-    height: 100%;
-    padding: 1em;
-    background: #fff url(../logo_new.png) center/60% no-repeat;
-    border: solid 4px #FCE795; }
-
 @media screen and (max-width: 768px) {
   .grid-sizer,
   .grid-item {
@@ -2821,6 +2864,12 @@ a {
     float: right; }
   #footer p {
     margin-bottom: 0; }
+  @media screen and (max-width: 736px) {
+    #footer .icons,
+    #footer .copyright {
+      float: none; }
+    #footer .copyright {
+      padding: 1em 0; } }
 
 /* Menu */
 #menu {

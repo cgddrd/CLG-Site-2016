@@ -34,4 +34,17 @@
 			margin-bottom: 0;
 		}
 
+		@include breakpoint(small) {
+
+			.icons,
+			.copyright {
+				float: none;
+			}
+
+			.copyright {
+				padding: 1em 0;
+			}
+
+		}
+
 	}
