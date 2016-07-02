@@ -30,7 +30,7 @@
 
 			var mapOptions = {
 				center: new google.maps.LatLng(52.2673502, -4.4477719),
-				zoom: 8,
+				zoom: 7,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 				zoomControl: false,
 				scaleControl: false,
@@ -133,21 +133,24 @@
 			var marker = new google.maps.Marker({
 				position: new google.maps.LatLng(51.7441133, -4.932024),
 				map: map,
-				//icon: 'http://i.imgur.com/NqPBMCm.png'
 				icon: mapPointer
 			});
 
-			var marker = new google.maps.Marker({
+			marker = new google.maps.Marker({
 				position: new google.maps.LatLng(52.414467, -4.0951933),
 				map: map,
-				//icon: 'http://i.imgur.com/NqPBMCm.png'
+				icon: mapPointer
+			});
+
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(51.636140, -2.3933856),
+				map: map,
 				icon: mapPointer
 			});
 
 		}
 		google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
-
 
 </head>
 

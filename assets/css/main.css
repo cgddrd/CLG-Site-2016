@@ -2437,8 +2437,7 @@ body {
       width: 100px;
       height: 100%;
       padding: 1em;
-      background: #fff url(../logo_new.png) center/60% no-repeat;
-      border: solid 4px #FCE795; }
+      background: #fff url(../logo-2016.png) center/80% no-repeat; }
   #header a {
     color: inherit;
     text-decoration: none; }
@@ -2569,9 +2568,6 @@ body {
   width: 75em; }
   body.is-menu-visible #wrapper {
     opacity: 0.15; }
-  @media screen and (max-width: 1680px) {
-    #wrapper {
-      padding: 3em; } }
   @media screen and (max-width: 1280px) {
     #wrapper {
       display: block; } }
