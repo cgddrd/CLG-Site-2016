@@ -23,6 +23,11 @@ body {
   overflow: hidden !important;
   margin-bottom: 1em;
   max-height: 100px;
+  position: fixed;
+width: 70em;
+left: 4em;
+top: 8em;
+z-index: -9999;
 
   // Need to flex-grow the navigation container.
   > div.nav-cont {

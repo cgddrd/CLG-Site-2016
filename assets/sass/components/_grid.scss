@@ -1,11 +1,12 @@
 .grid {
 
   max-width: 100%;
-  width: 90em;
+  width: 36em;
   padding-top: 1em;
   text-transform: uppercase;
   font-size: 1.5rem;
   position: relative;
+  margin-left: 5em;
 
   .gutter-sizer {
     width: _grid(tile-gutter);
@@ -185,11 +186,11 @@
     border-bottom: solid 5px _palette(border);
     overflow: hidden;
     position: relative;
-    opacity: 0;
+    opacity: 1;
     float: left;
 
-    @include vendor('transition', ( 'all #{_duration(transition)} ease' ));
-    @include vendor('transform', 'translateY(120px)');
+    // @include vendor('transition', ( 'all #{_duration(transition)} ease' ));
+    // @include vendor('transform', 'translateY(120px)');
 
     > a {
 
@@ -201,6 +202,7 @@
         border: none !important;
         font-size: 1em !important;
         color: _palette(fg) !important;
+        
     }
 
     &.detail {

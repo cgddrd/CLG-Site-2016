@@ -169,8 +169,8 @@
 
 			</div>
 
-			<div class="nav-cont">
-				<nav class="links">
+			<!-- <div class="nav-cont"> -->
+			<!-- <nav class="links">
 					<ul>
 
 						<li><a href="https://uk.linkedin.com/in/cgddrd">LinkedIn</a></li>
@@ -179,8 +179,8 @@
 						<li><a href="http://docs.connorlukegoddard.com/CLG-CV.pdf">Curriculum Vitae</a></li>
 
 					</ul>
-				</nav>
-			</div>
+				</nav> -->
+			<!-- </div> -->
 
 			<nav class="main">
 				<ul>
@@ -198,10 +198,9 @@
 		</header>
 
 		<!-- Menu -->
-		<section id="menu">
+		<!-- <section id="menu">
 
-			<!-- Links -->
-			<section>
+		<section>
 
 				<h3>Get In Touch</h3>
 
@@ -234,7 +233,7 @@
 
 			</section>
 
-		</section>
+		</section> -->
 
 		<!-- Main -->
 
@@ -265,14 +264,14 @@
 				</div>
 
 				<div class="title">
-					Shrinking Violets // <span class="bold">Branding</span>
+					Shrinking Violets
 					<i class="fa fa-chevron-up"></i>
 				</div>
 
 				<div class="details tall">
 
 					<h2>
-						Shrinking Violets // <span class="bold">Branding</span>
+						Shrinking Violets
 						<i class="fa fa-chevron-down"></i>
 					</h2>
 
@@ -318,12 +317,12 @@
 					<span id="mmp"></span>
 				</div>
 
-				<div class="title">Terrain Gradient Estimation (Major Project) // <span class="bold">Computer Vision</span><i class="fa fa-chevron-up"></i></div>
+				<div class="title">Terrain Gradient Estimation (Major Project)<i class="fa fa-chevron-up"></i></div>
 
 				<div class="details">
 
 					<h2>
-						Terrain Gradient Estimation (Major Project) // <span class="bold">Computer Vision</span><i class="fa fa-chevron-down"></i>
+						Terrain Gradient Estimation (Major Project)<i class="fa fa-chevron-down"></i>
 					</h2>
 
 					<div class="work-description">
@@ -376,14 +375,14 @@
 				</div>
 
 				<div class="title">
-					Renishaw // <span class="bold">Android &amp; iOS</span>
+					Renishaw
 					<i class="fa fa-chevron-up"></i>
 				</div>
 
 				<div class="details tall">
 
 					<h2>
-						Renishaw // <span class="bold">Android &amp; iOS</span>
+						Renishaw
 						<i class="fa fa-chevron-down"></i>
 					</h2>
 
@@ -425,7 +424,7 @@
 					</div>
 
 					<div class="title">
-						Aber Links (St. John Cymru-Wales) // <span class="bold">Web Design</span>
+						Aber Links (St. John Cymru-Wales)
 						<i class="fa fa-external-link"></i>
 					</div>
 
@@ -444,7 +443,7 @@
 					</div>
 
 					<div class="title">
-						Ty.Fidirect Care // <span class="bold">Web Design</span>
+						Ty.Fidirect Care
 						<i class="fa fa-external-link"></i>
 					</div>
 
@@ -478,7 +477,7 @@
 					</div>
 
 					<div class="title">
-						Race to Space // <span class="bold">Project</span>
+						Race to Space
 						<i class="fa fa-external-link"></i>
 					</div>
 
@@ -494,7 +493,7 @@
 						<span id="orbitaljs"></span>
 					</div>
 
-					<div class="title">OrbitalJS // <span class="bold">WebGL</span><i class="fa fa-external-link"></i></div>
+					<div class="title">OrbitalJS<i class="fa fa-external-link"></i></div>
 
 				</a>
 
@@ -508,7 +507,7 @@
 						<span id="wordwarz"></span>
 					</div>
 
-					<div class="title">WordWarz // <span class="bold">HTML5 Canvas</span><i class="fa fa-external-link"></i></div>
+					<div class="title">WordWarz<i class="fa fa-external-link"></i></div>
 
 				</a>
 
@@ -556,7 +555,6 @@
 	<script src="assets/js/main.js"></script>
 
 	<script>
-
 		// var element = document.getElementById('nav-item-work');
 		// element.addEventListener('click', function() {
 		// 	iso.arrange({
@@ -565,9 +563,10 @@
 		// }, false);
 
 		function is_touch_device() {
-		 return 'ontouchstart' in window        // works on most browsers
-				 || navigator.maxTouchPoints;       // works on IE10/11 and Surface
-	 };
+			return 'ontouchstart' in window // works on most browsers
+				||
+				navigator.maxTouchPoints; // works on IE10/11 and Surface
+		};
 
 		jQuery(document).ready(function($) {
 
@@ -597,8 +596,31 @@
 				infinite: true,
 			});
 
-		});
+			var allMods = $(".grid-item");
 
+			allMods.each(function(i, el) {
+
+				var el = $(el);
+
+				if (typeof el.attr('data-scroll-rate') == typeof undefined || el.attr("data-scroll-rate") == false) {
+					var rand = (Math.floor((Math.random() * 10) + 3) * 10);
+					el.attr("data-scroll-rate", rand);
+					el.attr('data-scroll-speed', Math.floor(Math.random() * 2) + 1);
+				}
+
+				if (!el.hasClass('inactive')) {
+				el.attr("data-top", el.css("top"));
+
+				el.css('top', parseInt(el.css('top')) + parseInt(el.attr("data-scroll-rate")));
+			}
+
+
+
+				// el.css('top', parseInt(el.css('top')) + 100)
+
+			});
+
+		});
 	</script>
 
 	<script>
@@ -634,10 +656,22 @@
 			var allMods = $(".grid-item");
 
 			allMods.each(function(i, el) {
+
 				var el = $(el);
+
 				if (el.visible(true)) {
-					el.addClass("moveup");
+					//el.addClass("moveup");
+					el.css('top', '0px');
+					el.addClass('inactive');
 				}
+
+
+
+				// el.attr("data-top", el.css("top"));
+
+
+				// el.css('top', parseInt(el.css('top')) + 100)
+
 			});
 
 		})(jQuery);
@@ -646,21 +680,83 @@
 
 		var allMods = $(".grid-item");
 
-		allMods.each(function(i, el) {
-			var el = $(el);
-			if (el.visible(true)) {
-				el.addClass("already-visible");
-			}
-		});
+		var lastScrollTop = 0;
+
+		// allMods.each(function(i, el) {
+		// 	var el = $(el);
+		// 	if (el.visible(true)) {
+		// 		el.addClass("already-visible");
+		// 	}
+		// });
 
 		win.scroll(function(event) {
 
+			var st = $(this).scrollTop();
+
 			allMods.each(function(i, el) {
+
 				var el = $(el);
-				if (el.visible(true)) {
-					el.addClass("moveup");
+
+				if (el.visible(true) && !el.hasClass('inactive')) {
+
+					if (st > lastScrollTop) {
+						// downscroll code
+
+						var number = parseInt(el.attr("data-scroll-speed"));
+
+						//  console.log("down scroll");
+						if ((parseInt(el.css('top')) - number) >= parseInt(el.attr("data-top"))) {
+
+							// console.log("downward.");
+							el.css('top', parseInt(el.css('top')) - Math.abs(number));
+
+						}
+
+					} else {
+						// upscroll code
+
+						// if ((parseInt(el.css("top")) - number) >= 0) {
+						// el.css('top', parseInt(el.css('top')) - number)
+						// }
+
+						//console.log('upscroll')
+
+						$w = $(window);
+						var viewTop = $w.scrollTop();
+						var viewBottom = viewTop + $w.height();
+
+						if (el.offset().top > (viewBottom - 150)) {
+
+							var number = parseInt(el.attr("data-scroll-speed"));
+
+							if ((parseInt(el.css('top')) + number) <= (parseInt(el.attr('data-top')) + parseInt(el.attr('data-scroll-rate')))) {
+
+									el.css('top', parseInt(el.css('top')) + number);
+
+							}
+
+						}
+
+						// CG - Here we only want to run when visible right at the bottom of the screen!
+
+
+
+
+						//  console.log("down scroll");
+						// if ((parseInt(el.css('top')) + number) < (parseInt(el.attr("data-top")) + parseInt(el.attr("data-scroll-rate")))) {
+
+							// console.log("downward.");
+
+
+						// }
+
+					}
+
 				}
+
 			});
+
+			lastScrollTop = st;
 
 		});
 
@@ -678,7 +774,6 @@
 			$(this).removeClass('display-active');
 			$(this).parent().children('.title').removeClass('display-inactive');
 		}
-
 	</script>
 
 </body>

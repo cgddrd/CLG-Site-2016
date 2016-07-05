@@ -2,17 +2,14 @@
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,400,700|Raleway:100,400,800,900|Montserrat:400,700");
 @-webkit-keyframes moveUp {
   to {
-    -webkit-transform: translateY(0);
     opacity: 1; } }
 
 @-moz-keyframes moveUp {
   to {
-    -moz-transform: translateY(0);
     opacity: 1; } }
 
 @keyframes moveUp {
   to {
-    transform: translateY(0);
     opacity: 1; } }
 
 .moveup {
@@ -22,9 +19,6 @@
 
 .moveup:nth-child(even) {
   animation-duration: .6s; }
-
-.already-visible {
-  transform: translateY(0); }
 
 .grid.no-js {
   overflow: hidden; }
@@ -2073,11 +2067,12 @@ table {
 
 .grid {
   max-width: 100%;
-  width: 90em;
+  width: 36em;
   padding-top: 1em;
   text-transform: uppercase;
   font-size: 1.5rem;
-  position: relative; }
+  position: relative;
+  margin-left: 5em; }
   .grid .gutter-sizer {
     width: 1%; }
   .grid .grid-sizer {
@@ -2157,16 +2152,8 @@ table {
     border-bottom: solid 5px #f4f7fa;
     overflow: hidden;
     position: relative;
-    opacity: 0;
-    float: left;
-    -moz-transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    -moz-transform: translateY(120px);
-    -webkit-transform: translateY(120px);
-    -ms-transform: translateY(120px);
-    transform: translateY(120px); }
+    opacity: 1;
+    float: left; }
     .grid .grid-item > a {
       display: block;
       width: 100%;
@@ -2402,7 +2389,12 @@ body {
   z-index: 10000;
   overflow: hidden !important;
   margin-bottom: 1em;
-  max-height: 100px; }
+  max-height: 100px;
+  position: fixed;
+  width: 70em;
+  left: 4em;
+  top: 8em;
+  z-index: -9999; }
   #header > div.nav-cont {
     display: -moz-flex;
     display: -webkit-flex;
