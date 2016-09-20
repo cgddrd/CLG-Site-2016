@@ -17,7 +17,8 @@
 	<!-- <link rel="stylesheet" href="assets/css/devices.min.css" type="text/css" /> -->
 	<link rel="stylesheet" href="assets/css/unslider.css">
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script> -->
+	<script src="assets/js/isotope.pkgd.min.js"></script>
 	<script src="assets/js/modernizr.min.js"></script>
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -549,7 +550,9 @@
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
-	<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+	<!-- <script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script> -->
+	<script src="assets/js/velocity.min.js"></script>
+
 	<script src="assets/js/unslider-min.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
@@ -561,6 +564,34 @@
 		// 		filter: '.work'
 		// 	})
 		// }, false);
+
+					/**
+ * Returns a number whose value is limited to the given range.
+ *
+ * Example: limit the output of this computation to between 0 and 255
+ * (x * 255).clamp(0, 255)
+ *
+ * @param {Number} min The lower boundary of the output range
+ * @param {Number} max The upper boundary of the output range
+ * @returns A number in the range [min, max]
+ * @type Number
+ */
+Number.prototype.clamp = function(min, max) {
+  return Math.min(Math.max(this, min), max);
+};
+
+		// CG - Calculates what percentage of the range between 'a' and 'b' is represented by 'x'.
+		// See: http://math.stackexchange.com/a/754156 for maths theory.
+		function calculatePercentFromXBetweenTwoNumbers(a, b, x) 
+		{
+			var percent = (x-a) / (b-a);
+			return percent.clamp(0, 100.0);
+		}
+
+		function calculateXFromPercentBetweenTwoNumbers(a, b, percent)
+		{
+			return percent * (b-a) + a;
+		}
 
 		function is_touch_device() {
 			return 'ontouchstart' in window // works on most browsers
@@ -575,6 +606,8 @@
 			if (is_touch_device) {
 				$('.title').addClass('touch');
 			}
+
+
 
 			var iso = new Isotope('.grid', {
 				itemSelector: '.grid-item',
@@ -596,25 +629,33 @@
 				infinite: true,
 			});
 
+			function getRandomInt(min, max) {
+  				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
 			var allMods = $(".grid-item");
 
 			allMods.each(function(i, el) {
 
 				var el = $(el);
 
-				if (typeof el.attr('data-scroll-rate') == typeof undefined || el.attr("data-scroll-rate") == false) {
-					var rand = (Math.floor((Math.random() * 10) + 3) * 10);
+				if (typeof el.attr('data-scroll-rate') == typeof undefined || el.attr("data-scroll-rate") == false)
+				{
+					var rand = getRandomInt(20, 100);
 					el.attr("data-scroll-rate", rand);
-					el.attr('data-scroll-speed', Math.floor(Math.random() * 2) + 1);
+					//el.attr('data-scroll-speed', Math.floor(Math.random() * 2) + 1);
 				}
 
+				// we need to calculate the percentage of the half window height that the top of the current card is from the middle of the screen.
+				// this percentage can then be used to calculate the percentage of the slide in gap that the position of the card should be.
+
 				if (!el.hasClass('inactive')) {
-				el.attr("data-top", el.css("top"));
 
-				el.css('top', parseInt(el.css('top')) + parseInt(el.attr("data-scroll-rate")));
-			}
+					el.attr("data-top", parseInt(el.css("top")));
+					el.attr("data-new-top", parseInt(el.css('top')) + parseInt(el.attr("data-scroll-rate")));
+					el.css('top', parseInt(el.css('top')) + parseInt(el.attr("data-scroll-rate")));
 
-
+				}
 
 				// el.css('top', parseInt(el.css('top')) + 100)
 
@@ -696,46 +737,69 @@
 			allMods.each(function(i, el) {
 
 				var el = $(el);
+				$w = $(window);
+				var viewTop = 0;
+				var viewBottom = 0;
+				var viewMiddle = 0;
 
 				if (el.visible(true) && !el.hasClass('inactive')) {
 
+					viewTop = $w.scrollTop();
+					viewBottom = viewTop + $w.height();
+					viewUpperQuarter = viewTop + ($w.height() / 4);
+
+					
 					if (st > lastScrollTop) {
 						// downscroll code
 
-						var number = parseInt(el.attr("data-scroll-speed"));
+						//var scrollSpeed = parseInt(el.attr("data-scroll-speed"));
 
 						//  console.log("down scroll");
-						if ((parseInt(el.css('top')) - number) >= parseInt(el.attr("data-top"))) {
+			
 
-							// console.log("downward.");
-							el.css('top', parseInt(el.css('top')) - Math.abs(number));
+							var cardPositionPercentage = calculatePercentFromXBetweenTwoNumbers(viewUpperQuarter, viewBottom, parseInt(el.css('top')));
 
-						}
+							var rangeStart = parseInt(el.attr('data-top'));
+							var rangeEnd = parseInt(el.attr('data-new-top'));
+
+
+							var newPos = calculateXFromPercentBetweenTwoNumbers(rangeStart, rangeEnd, cardPositionPercentage);
+
+							el.css('top', newPos);
+
+							//el.css('top', parseInt(el.css('top')) - Math.abs(scrollSpeed));
+
+						
 
 					} else {
 						// upscroll code
 
-						// if ((parseInt(el.css("top")) - number) >= 0) {
-						// el.css('top', parseInt(el.css('top')) - number)
+						//if (el.offset().top >= viewMiddle) {
+
+							var cardPositionPercentage = calculatePercentFromXBetweenTwoNumbers(viewUpperQuarter, viewBottom, parseInt(el.css('top')));
+
+							var rangeStart = parseInt(el.attr('data-top'));
+							var rangeEnd = parseInt(el.attr('data-new-top'));
+
+							var newPos = calculateXFromPercentBetweenTwoNumbers(rangeStart, rangeEnd, cardPositionPercentage);
+
+							el.css('top', newPos);
+
+						//}
+
+
+
+						// if (el.offset().top > (viewBottom - 150)) {
+						
+						// 	var number = parseInt(el.attr("data-scroll-speed"));
+						
+						// 	if ((parseInt(el.css('top')) + number) <= (parseInt(el.attr('data-top')) + parseInt(el.attr('data-scroll-rate')))) {
+						
+						// 			el.css('top', parseInt(el.css('top')) + number);
+						
+						// 	}
+						
 						// }
-
-						//console.log('upscroll')
-
-						$w = $(window);
-						var viewTop = $w.scrollTop();
-						var viewBottom = viewTop + $w.height();
-
-						if (el.offset().top > (viewBottom - 150)) {
-
-							var number = parseInt(el.attr("data-scroll-speed"));
-
-							if ((parseInt(el.css('top')) + number) <= (parseInt(el.attr('data-top')) + parseInt(el.attr('data-scroll-rate')))) {
-
-									el.css('top', parseInt(el.css('top')) + number);
-
-							}
-
-						}
 
 						// CG - Here we only want to run when visible right at the bottom of the screen!
 
