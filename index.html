@@ -37,7 +37,8 @@
 				scaleControl: false,
 				mapTypeControl: false,
 				rotateControl: false,
-				streetViewControl: false
+				streetViewControl: false,
+
 			}
 
 			var map = new google.maps.Map(mapCanvas, mapOptions);
@@ -80,7 +81,7 @@
 				stylers: [{
 					visibility: 'on'
 				}, {
-					color: '#F6F6F6'
+					color: '#F8F8F8'
 				}]
 			}, {
 				featureType: 'water',
@@ -161,7 +162,7 @@
 	<div id="wrapper">
 
 		<!-- Header -->
-		<header id="header">
+		<header id="header" style="padding: 0 1em;background: transparent;">
 
 			<div id="logo">
 
@@ -243,22 +244,31 @@
 			<div class="grid-sizer"></div>
 			<div class="gutter-sizer"></div>
 
-			<div class="grid-item col-7-l work">
+			<div style="background: none;border: solid 5px #f4f7fa;" class="grid-item col-7-l work left">
 
-				<div class="text-container">
-					<span class="bold">Connor Goddard</span> is a final-year MEng Software Engineering student at <a>Aberystwyth University</a>, Wales.
+				<div class="text-container" style="padding: 2em;">
+					<span style="font-size: 2.4em;line-height: normal;font-family: 'League Spartan', serif;">Connor Luke Goddard</span>
+					<p style="font-size:.6em;margin-top:2em;font-family: 'Inconsolata', monospace;margin: 2em 0 0 0;">Writing software for <a>Renishaw plc</a>.</p> 
+					<p style="font-size:.6em;margin-top:2em;font-family: 'Inconsolata', monospace;margin:0;">Alumnus of <a>Aberystwyth University</a>.</p>
 				</div>
 
 			</div>
 
-			<div class="grid-item col-5-r profile-image">
+<!-- 			<div class="grid-item col-7-r work">
+
+				<div class="text-container">
+					<span class="bold">Software Engineer @ Renishaw plc.</span>
+				</div>
+
+			</div> -->
+
+			<div class="grid-item col-5-r profile-image right">
 				<div class="grid-item-image-container">
 					<span id="profile-image"></span>
 				</div>
-
 			</div>
 
-			<div class="grid-item col-4-l detail">
+			<div class="grid-item col-4-l detail android left">
 
 				<div class="grid-item-image-container">
 					<span id="violet"></span>
@@ -297,22 +307,25 @@
 
 			</div>
 
-			<div class="grid-item work col-8-r">
+			<div class="grid-item work col-8-r right">
 
 				<div class="image-container">
 
 					<div id="map"></div>
-					<div class="after"></div>
+					<!-- The below div creates a slightly grey box on the background that we no longer want. -->
+					<!-- <div class="after"></div> -->
 
-					<div class="text-container">
-						Raised in Pembrokeshire, UK, he currently works as an <span class="bold">academic advisor &amp; technical demonstrator</span> for <a>&commat;AberCompSci</a>, whilst also serving as <span class="bold">finance officer</span> for <a>&commat;AberLINKSStJohn</a>.
+					<div class="text-container" style="font-family: 'hk_grotesklight', monospace;">
+						<p>Raised in Pembrokeshire, UK. Living &amp; working in the Cotswolds.
+						Develop for: Windows, iOS, <a class="android" href="#">Android</a> &amp; the web.
+						<br /><br />First Aider with St. John England; Guest lecturer; </p>
 					</div>
 
 				</div>
 
 			</div>
 
-			<div class="grid-item col-8-l work light detail">
+			<div class="grid-item col-8-l work light detail left">
 
 				<div class="grid-item-image-container">
 					<span id="mmp"></span>
@@ -361,7 +374,7 @@
 
 			</div>
 
-			<div class="grid-item heightplushalf col-4-r origin-bottom detail">
+			<div class="grid-item heightplushalf col-4-r origin-bottom detail android right">
 
 				<div id="mob">
 					<div class="screen-slider">
@@ -416,7 +429,7 @@
 
 			</div>
 
-			<div class="grid-item col-5-l half-height">
+			<div class="grid-item col-5-l half-height android left">
 
 				<a href="http://aber-links.co.uk">
 
@@ -435,7 +448,7 @@
 			</div>
 
 
-			<div class="grid-item col-3-l half-height">
+			<div class="grid-item col-3-l half-height left">
 
 				<a href="http://www.ty-fidirectcare.co.uk/">
 
@@ -452,7 +465,7 @@
 
 			</div>
 
-			<div class="grid-item col-5-l spotlight-tile">
+			<div class="grid-item col-6-l spotlight-tile left">
 				<div class="text-container">
 					<h2>Recent Talks</h2>
 
@@ -469,7 +482,7 @@
 				</div>
 			</div>
 
-			<div class="grid-item col-7-r work light">
+			<div class="grid-item col-6-r work light right">
 
 				<a href="http://www.bbc.co.uk/news/uk-wales-south-west-wales-18793717">
 
@@ -486,26 +499,31 @@
 
 			</div>
 
-			<div class="grid-item col-9-l work light">
+			<div class="grid-item col-8-l work light left">
 
 				<a href="http://lab.connorlukegoddard.com/orbitaljs">
 
-					<div class="grid-item-image-container">
-						<span id="orbitaljs"></span>
-					</div>
-
-					<div class="title">OrbitalJS<i class="fa fa-external-link"></i></div>
+				<div class="grid-item-video-container">
+					<video autoplay="autoplay" loop="loop">
+					  <source src="assets/orbital.mp4" type="video/mp4" />
+					  <img src="assets/orbital.gif" />
+					</video>
+				</div>
+				<div class="title">OrbitalJS<i class="fa fa-external-link"></i></div>
 
 				</a>
 
 			</div>
 
-			<div class="grid-item col-3-r work light">
+			<div class="grid-item col-4-r work light right">
 
 				<a href="http://lab.connorlukegoddard.com/wordwarz">
 
-					<div class="grid-item-image-container">
-						<span id="wordwarz"></span>
+					<div class="grid-item-video-container">
+						<video autoplay="autoplay" loop="loop">
+					  		<source src="assets/wordwarz.mp4" type="video/mp4" />
+					  		<img src="assets/wordwarz.gif" />
+						</video>
 					</div>
 
 					<div class="title">WordWarz<i class="fa fa-external-link"></i></div>
@@ -620,6 +638,14 @@ Number.prototype.clamp = function(min, max) {
 				}
 			});
 
+			$("a.android").on('click', function(evt) {
+
+			iso.arrange({
+		 		filter: '.android'
+		 	})
+
+		});
+
 			$('.screen-slider').unslider({
 				autoplay: true,
 				arrows: false,
@@ -645,6 +671,9 @@ Number.prototype.clamp = function(min, max) {
 					el.attr("data-scroll-rate", rand);
 					//el.attr('data-scroll-speed', Math.floor(Math.random() * 2) + 1);
 				}
+
+				//el.css('margin-top', getRandomInt(100, 180));
+				
 
 				// we need to calculate the percentage of the half window height that the top of the current card is from the middle of the screen.
 				// this percentage can then be used to calculate the percentage of the slide in gap that the position of the card should be.
@@ -830,6 +859,8 @@ Number.prototype.clamp = function(min, max) {
 			$(this).children('.title').addClass('display-inactive');
 
 		});
+
+		
 
 		$(".details").on('mouseleave', hideDetails);
 		$(".details i").on('click touchstart', hideDetails);

@@ -1,5 +1,53 @@
 @import url(font-awesome.min.css);
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,400,700|Raleway:100,400,800,900|Montserrat:400,700");
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,400,700|Raleway:100,400,800,900|Montserrat:400,700|Inconsolata");
+@import 'https://fonts.googleapis.com/css?family=Crimson+Text';
+@import 'https://fonts.googleapis.com/css?family=Old+Standard+TT';
+@import url(//db.onlinewebfonts.com/c/7cc8cbbd7a330c0d1e7c08c6d62711e4?family=League+Spartan);
+@import 'https://fonts.googleapis.com/css?family=Merriweather';
+
+
+  @font-face {
+    font-family: 'hk_groteskbold';
+    src: url('./hkgrotesk-bold-webfont.woff2') format('woff2'),
+         url('./hkgrotesk-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hk_grotesklight';
+    src: url('./hkgrotesk-light-webfont.woff2') format('woff2'),
+         url('./hkgrotesk-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hk_groteskmedium';
+    src: url('./hkgrotesk-medium-webfont.woff2') format('woff2'),
+         url('./hkgrotesk-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hk_groteskregular';
+    src: url('hkgrotesk-regular-webfont.woff2') format('woff2'),
+         url('hkgrotesk-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+.gm-style-cc div,
+.gm-style-cc a {
+  font-family: 'Inconsolata', monospace !important;
+}
+
 @-webkit-keyframes moveUp {
   to {
     opacity: 1; } }
@@ -979,7 +1027,8 @@ body, input, select, textarea {
       font-size: 12pt; } }
 
 body {
-  font-family: "Raleway", "Source Sans Pro", Helvetica, sans-serif; 
+  /*font-family: "Raleway", "Source Sans Pro", Helvetica, sans-serif; */
+  font-family: 'Inconsolata', monospace !important;
 /*font-family: -apple-system, BlinkMacSystemFont, 
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
     "Fira Sans", "Droid Sans", "Helvetica Neue", 
@@ -2072,12 +2121,17 @@ table {
 
 .grid {
   max-width: 100%;
-  width: 36em;
+  width: 40em;
   padding-top: 1em;
   text-transform: uppercase;
   font-size: 1.5rem;
   position: relative;
-  margin-left: 5em; }
+  /*margin-left: 5em; */
+
+  margin: 0 auto;
+
+
+}
   .grid .gutter-sizer {
     width: 1%; }
   .grid .grid-sizer {
@@ -2149,12 +2203,12 @@ table {
   .grid .spotlight-tile {
     background-color: #FCE795 !important; }
   .grid .grid-item {
-    background: #FbFbFb;
+    /*background: #FbFbFb;*/
     font-size: 1em;
     letter-spacing: 0.15em;
     height: 400px;
     margin-bottom: 10px;
-    border-bottom: solid 5px #f4f7fa;
+    /*border-bottom: solid 5px #f4f7fa;*/
     overflow: hidden;
     position: relative;
     opacity: 1;
@@ -2180,7 +2234,7 @@ table {
       overflow: hidden;
       opacity: 0;
       bottom: 0;
-      font-family: "Montserrat", Helvetica, sans-serif;
+      font-family: 'Inconsolata', monospace;
       -moz-transition: top, bottom 0.2s ease;
       -webkit-transition: top, bottom 0.2s ease;
       -ms-transition: top, bottom 0.2s ease;
@@ -2226,7 +2280,7 @@ table {
       .grid .grid-item div.text-container h2,
       .grid .grid-item div.text-container ul,
       .grid .grid-item div.text-container li {
-        font-family: "Montserrat", Helvetica, sans-serif !important; }
+        font-family: 'Inconsolata', monospace !important;}
     .grid .grid-item div.details {
       width: 100%;
       height: 100%;
@@ -2276,7 +2330,9 @@ table {
         z-index: 2000 !important; }
     .grid .grid-item:hover {
       border-bottom-color: #FCE795; }
-      .grid .grid-item:hover .grid-item-image-container {
+      .grid .grid-item:hover .grid-item-image-container,
+      .grid .grid-item:hover .grid-item-video-container
+       {
         -moz-transform: scale(1.05);
         -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
@@ -2316,7 +2372,9 @@ table {
     height: 610px; }
   .grid .width-full {
     width: 100; }
-  .grid .grid-item-image-container {
+  .grid .grid-item-image-container,
+  .grid .grid-item-video-container
+   {
     width: 100%;
     height: 100%;
     -moz-transition: -moz-transform 0.2s ease-out;
@@ -2396,9 +2454,11 @@ body {
   margin-bottom: 1em;
   max-height: 100px;
   position: fixed;
-  width: 70em;
-  left: 4em;
+  width: 75em;
   top: 8em;
+  padding: 0 4.5em;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: -9999; }
   #header > div.nav-cont {
     display: -moz-flex;
@@ -2678,13 +2738,26 @@ a {
   display: block;
   height: 100%;
   width: 100%;
-  background: url(../orbitaljs.png) center/cover no-repeat !important; }
+  /*background: url(../orbital.gif) center/cover no-repeat !important; }*/
+}
 
 #wordwarz {
   display: block;
   height: 100%;
   width: 100%;
-  background: url(../wordwarz.png) center/cover no-repeat !important; }
+  /*background: url(../wordwarz.gif) center/cover no-repeat !important; }*/
+}
+
+.grid-item video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 
 #tyfi {
   display: block;
