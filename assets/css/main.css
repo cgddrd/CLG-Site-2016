@@ -1,9 +1,6 @@
 @import url(font-awesome.min.css);
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,400,700|Raleway:100,400,800,900|Montserrat:400,700|Inconsolata");
-@import 'https://fonts.googleapis.com/css?family=Crimson+Text';
-@import 'https://fonts.googleapis.com/css?family=Old+Standard+TT';
+@import url("//fonts.googleapis.com/css?family=Source+Sans+Pro:100,400,700|Raleway:100,400,800,900|Montserrat:400,700|Inconsolata");
 @import url(//db.onlinewebfonts.com/c/7cc8cbbd7a330c0d1e7c08c6d62711e4?family=League+Spartan);
-@import 'https://fonts.googleapis.com/css?family=Merriweather';
 
 
   @font-face {
