@@ -2432,31 +2432,24 @@ body {
   padding-top: 3em; }
 
 #header {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -moz-justify-content: space-between;
-  -webkit-justify-content: space-between;
-  -ms-justify-content: space-between;
-  justify-content: space-between;
-  background-color: #fff;
-  height: 6em;
-  left: 0;
-  line-height: 6em;
-  top: 0;
-  width: 100%;
-  z-index: 10000;
-  overflow: hidden !important;
-  margin-bottom: 1em;
-  max-height: 100px;
-  position: fixed;
-  width: 75em;
-  top: 8em;
-  padding: 0 4.5em;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -9999; }
+      display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    background-color: #fff;
+    height: 6em;
+    left: 0;
+    line-height: 6em;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    overflow: hidden !important;
+    margin-bottom: 1em;
+    max-height: 100px; }
   #header > div.nav-cont {
     display: -moz-flex;
     display: -webkit-flex;

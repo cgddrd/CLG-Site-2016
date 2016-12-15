@@ -248,7 +248,7 @@
 
 				<div class="text-container" style="padding: 2em;">
 					<span style="font-size: 2.4em;line-height: normal;font-family: 'League Spartan', serif;">Connor Luke Goddard</span>
-					<p style="font-size:.6em;margin-top:2em;font-family: 'Inconsolata', monospace;margin: 2em 0 0 0;">Writing software for <a>Renishaw plc</a>.</p> 
+					<p style="font-size:.6em;margin-top:2em;font-family: 'Inconsolata', monospace;margin: 2em 0 0 0;">Writing software for <a>Renishaw plc</a>.</p>
 					<p style="font-size:.6em;margin-top:2em;font-family: 'Inconsolata', monospace;margin:0;">Alumnus of <a>Aberystwyth University</a>.</p>
 				</div>
 
@@ -313,7 +313,7 @@
 
 					<div id="map"></div>
 					<!-- The below div creates a slightly grey box on the background that we no longer want. -->
-					<!-- <div class="after"></div> -->
+					<div class="after"></div>
 
 					<div class="text-container" style="font-family: 'hk_grotesklight', monospace;">
 						<p>Raised in Pembrokeshire, UK. Living &amp; working in the Cotswolds.
@@ -600,7 +600,7 @@ Number.prototype.clamp = function(min, max) {
 
 		// CG - Calculates what percentage of the range between 'a' and 'b' is represented by 'x'.
 		// See: http://math.stackexchange.com/a/754156 for maths theory.
-		function calculatePercentFromXBetweenTwoNumbers(a, b, x) 
+		function calculatePercentFromXBetweenTwoNumbers(a, b, x)
 		{
 			var percent = (x-a) / (b-a);
 			return percent.clamp(0, 100.0);
@@ -673,7 +673,7 @@ Number.prototype.clamp = function(min, max) {
 				}
 
 				//el.css('margin-top', getRandomInt(100, 180));
-				
+
 
 				// we need to calculate the percentage of the half window height that the top of the current card is from the middle of the screen.
 				// this percentage can then be used to calculate the percentage of the slide in gap that the position of the card should be.
@@ -777,14 +777,14 @@ Number.prototype.clamp = function(min, max) {
 					viewBottom = viewTop + $w.height();
 					viewUpperQuarter = viewTop + ($w.height() / 4);
 
-					
+
 					if (st > lastScrollTop) {
 						// downscroll code
 
 						//var scrollSpeed = parseInt(el.attr("data-scroll-speed"));
 
 						//  console.log("down scroll");
-			
+
 
 							var cardPositionPercentage = calculatePercentFromXBetweenTwoNumbers(viewUpperQuarter, viewBottom, parseInt(el.css('top')));
 
@@ -798,7 +798,7 @@ Number.prototype.clamp = function(min, max) {
 
 							//el.css('top', parseInt(el.css('top')) - Math.abs(scrollSpeed));
 
-						
+
 
 					} else {
 						// upscroll code
@@ -819,15 +819,15 @@ Number.prototype.clamp = function(min, max) {
 
 
 						// if (el.offset().top > (viewBottom - 150)) {
-						
+
 						// 	var number = parseInt(el.attr("data-scroll-speed"));
-						
+
 						// 	if ((parseInt(el.css('top')) + number) <= (parseInt(el.attr('data-top')) + parseInt(el.attr('data-scroll-rate')))) {
-						
+
 						// 			el.css('top', parseInt(el.css('top')) + number);
-						
+
 						// 	}
-						
+
 						// }
 
 						// CG - Here we only want to run when visible right at the bottom of the screen!
@@ -860,7 +860,7 @@ Number.prototype.clamp = function(min, max) {
 
 		});
 
-		
+
 
 		$(".details").on('mouseleave', hideDetails);
 		$(".details i").on('click touchstart', hideDetails);
